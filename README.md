@@ -38,7 +38,7 @@ npm i simple-notify
 | `autoclose`                                 | Boolean |                                      |  false  |
 | `autotimeout` (valid only with `autoclose`) | Number  |                                      |  3000   |
 | `gap` (margin between notifications)        | Number  |                                      |   20    |
-| `type` (only for design)                    | Number  | 1, 2, 3                              |    1    |
+| `type` (just for design)                    | Number  | 1, 2, 3                              |    1    |
 
 <sub>All parameters are optional but you must specify 'title' or 'text' at least.</sub>
 
