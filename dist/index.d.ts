@@ -1,0 +1,53 @@
+import '../css/simple-notify.scss';
+interface IArgs {
+    status: string;
+    title: string;
+    text: string;
+    isIcon: Boolean;
+    customIcon: string;
+    isCloseButton: Boolean;
+    customClass: string;
+    speed: number;
+    effect: string;
+    autoremove: Boolean;
+    autotimeout: number;
+    gap: number;
+    type: number;
+}
+export default class Notify {
+    wrapper: HTMLElement;
+    container: HTMLElement;
+    status: string;
+    title: string;
+    text: string;
+    isIcon: Boolean;
+    customIcon: string;
+    isCloseButton: Boolean;
+    customClass: string;
+    speed: number;
+    effect: string;
+    autoremove: Boolean;
+    autotimeout: number;
+    gap: number;
+    type: number;
+    selectedNotifyInEffect: Function;
+    selectedNotifyOutEffect: Function;
+    constructor(args: IArgs);
+    private checkRequirements;
+    private setContainer;
+    private setCloseButton;
+    private setWrapper;
+    private setContent;
+    private setIcon;
+    private setObserver;
+    private notifyIn;
+    private notifyOut;
+    private autoRemove;
+    close(): void;
+    private setEffect;
+    private fadeIn;
+    private fadeOut;
+    private slideIn;
+    private slideOut;
+}
+export {};
