@@ -9,7 +9,7 @@ interface IArgs {
     customClass: string;
     speed: number;
     effect: string;
-    autoremove: Boolean;
+    autoclose: Boolean;
     autotimeout: number;
     gap: number;
     type: number;
@@ -26,7 +26,7 @@ export default class Notify {
     customClass: string;
     speed: number;
     effect: string;
-    autoremove: Boolean;
+    autoclose: Boolean;
     autotimeout: number;
     gap: number;
     type: number;
@@ -42,7 +42,7 @@ export default class Notify {
     private setObserver;
     private notifyIn;
     private notifyOut;
-    private autoRemove;
+    private autoClose;
     close(): void;
     private setEffect;
     private fadeIn;

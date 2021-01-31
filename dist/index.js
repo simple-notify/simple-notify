@@ -27,7 +27,7 @@ var Notify = /** @class */ (function () {
         this.fadeOut = fadeOut;
         this.slideIn = slideIn;
         this.slideOut = slideOut;
-        var _a = args.status, status = _a === void 0 ? null : _a, _b = args.title, title = _b === void 0 ? null : _b, _c = args.text, text = _c === void 0 ? null : _c, _d = args.isIcon, isIcon = _d === void 0 ? true : _d, _e = args.customIcon, customIcon = _e === void 0 ? null : _e, _f = args.customClass, customClass = _f === void 0 ? null : _f, _g = args.speed, speed = _g === void 0 ? 500 : _g, _h = args.effect, effect = _h === void 0 ? 'fade' : _h, _j = args.isCloseButton, isCloseButton = _j === void 0 ? true : _j, _k = args.autoremove, autoremove = _k === void 0 ? false : _k, _l = args.autotimeout, autotimeout = _l === void 0 ? 3000 : _l, _m = args.gap, gap = _m === void 0 ? 20 : _m, _o = args.type, type = _o === void 0 ? 1 : _o;
+        var _a = args.status, status = _a === void 0 ? null : _a, _b = args.title, title = _b === void 0 ? null : _b, _c = args.text, text = _c === void 0 ? null : _c, _d = args.isIcon, isIcon = _d === void 0 ? true : _d, _e = args.customIcon, customIcon = _e === void 0 ? null : _e, _f = args.customClass, customClass = _f === void 0 ? null : _f, _g = args.speed, speed = _g === void 0 ? 500 : _g, _h = args.effect, effect = _h === void 0 ? 'fade' : _h, _j = args.isCloseButton, isCloseButton = _j === void 0 ? true : _j, _k = args.autoclose, autoclose = _k === void 0 ? false : _k, _l = args.autotimeout, autotimeout = _l === void 0 ? 3000 : _l, _m = args.gap, gap = _m === void 0 ? 20 : _m, _o = args.type, type = _o === void 0 ? 1 : _o;
         this.status = status;
         this.title = title;
         this.text = text;
@@ -37,7 +37,7 @@ var Notify = /** @class */ (function () {
         this.speed = speed;
         this.effect = effect;
         this.isCloseButton = isCloseButton;
-        this.autoremove = autoremove;
+        this.autoclose = autoclose;
         this.autotimeout = autotimeout;
         this.gap = gap;
         this.type = type;
@@ -62,9 +62,9 @@ var Notify = /** @class */ (function () {
         // init effect
         this.setEffect();
         this.notifyIn(this.selectedNotifyInEffect);
-        // init autoremove
-        if (this.autoremove)
-            this.autoRemove();
+        // init autoclose
+        if (this.autoclose)
+            this.autoClose();
         // check whether Notify is visible
         this.setObserver();
     }
@@ -154,14 +154,18 @@ var Notify = /** @class */ (function () {
         }, {
             threshold: 0
         });
-        setTimeout(function () { observer.observe(_this.wrapper); }, this.speed);
+        setTimeout(function () {
+            observer.observe(_this.wrapper);
+        }, this.speed);
     };
     Notify.prototype.notifyIn = function (callback) {
         callback(this);
     };
-    Notify.prototype.autoRemove = function () {
+    Notify.prototype.autoClose = function () {
         var _this = this;
-        setTimeout(function () { _this.close(); }, this.autotimeout + this.speed);
+        setTimeout(function () {
+            _this.close();
+        }, this.autotimeout + this.speed);
     };
     Notify.prototype.close = function () {
         this.notifyOut(this.selectedNotifyOutEffect);

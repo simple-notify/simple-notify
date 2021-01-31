@@ -16,29 +16,29 @@ npm i simple-notify
 
 ```html
 <!-- Include CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-notify@0.1.0/dist/simple-notify.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-notify@0.1.1/dist/simple-notify.min.css" />
 
 <!-- Include JS -->
-<script src="https://cdn.jsdelivr.net/npm/simple-notify@0.1.0/dist/simple-notify.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/simple-notify@0.1.1/dist/simple-notify.min.js"></script>
 ```
 
 ## Parameters
 
-| Parameter                                    | Type    | Values                               | Default |
-| :------------------------------------------- | :------ | :----------------------------------- | :-----: |
-| `status`                                     | String  | `'error'`, `'warning'`, `'success'`  | `null`  |
-| `title`                                      | String  |                                      | `null`  |
-| `text`                                       | String  |                                      | `null`  |
-| `customIcon`                                 | String  | You can send any type of html.       | `null`  |
-| `customClass`                                | String  |                                      | `null`  |
-| `speed`                                      | Number  | transition-duration in milliseconds. |   300   |
-| `effect`                                     | String  | `'fade'`, `'slide'`                  | 'fade'  |
-| `isIcon`                                     | Boolean |                                      |  true   |
-| `isCloseButton`                              | Boolean |                                      |  true   |
-| `autoremove`                                 | Boolean |                                      |  false  |
-| `autotimeout` (valid only with `autoremove`) | Number  |                                      |  3000   |
-| `gap` (margin between notifications)         | Number  |                                      |   20    |
-| `type` (only for design)                     | Number  | 1, 2, 3                              |    1    |
+| Parameter                                   | Type    | Values                               | Default |
+| :------------------------------------------ | :------ | :----------------------------------- | :-----: |
+| `status`                                    | String  | `'error'`, `'warning'`, `'success'`  | `null`  |
+| `title`                                     | String  |                                      | `null`  |
+| `text`                                      | String  |                                      | `null`  |
+| `customIcon`                                | String  | You can send any type of html.       | `null`  |
+| `customClass`                               | String  |                                      | `null`  |
+| `speed`                                     | Number  | transition-duration in milliseconds. |   300   |
+| `effect`                                    | String  | `'fade'`, `'slide'`                  | 'fade'  |
+| `isIcon`                                    | Boolean |                                      |  true   |
+| `isCloseButton`                             | Boolean |                                      |  true   |
+| `autoclose`                                 | Boolean |                                      |  false  |
+| `autotimeout` (valid only with `autoclose`) | Number  |                                      |  3000   |
+| `gap` (margin between notifications)        | Number  |                                      |   20    |
+| `type` (only for design)                    | Number  | 1, 2, 3                              |    1    |
 
 <sub>All parameters are optional but you must specify 'title' or 'text' at least.</sub>
 

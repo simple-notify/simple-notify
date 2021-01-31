@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     customIcon: null,
     isIcon: true,
     isCloseButton: true,
-    autoremove: false,
+    autoclose: false,
     autotimeout: 3000,
     gap: 20,
     type: 1
@@ -85,8 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const val = e.target.checked
 
       switch (data) {
-        case 'autoremove':
-          notify_object.autoremove = val
+        case 'autoclose':
+          notify_object.autoclose = val
           break
         case 'isIcon':
           notify_object.isIcon = val
@@ -115,7 +115,7 @@ btn.addEventListener('click', () => {
     customIcon: '${notify_object.customIcon}',
     isIcon: ${notify_object.isIcon},
     isCloseButton: ${notify_object.isCloseButton},
-    autoremove: ${notify_object.autoremove},
+    autoclose: ${notify_object.autoclose},
     autotimeout: ${notify_object.autotimeout},
     gap: ${notify_object.gap},
     type: ${notify_object.type}
