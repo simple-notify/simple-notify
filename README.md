@@ -2,6 +2,8 @@
 
 Simple Notify is a pure Javascript library to show nice and customizable alert notifications.
 
+[Live Demo](https://dgknca.github.io/simple-notify/)
+
 ![](./demo/assets/types.png)
 
 ## Installation
