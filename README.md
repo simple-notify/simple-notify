@@ -1,6 +1,8 @@
 # Simple Notify
 
-Simple Notify is a pure Javascript library to show nice and customizable alert notifications as possible.
+Simple Notify is a pure Javascript library to show nice and customizable alert notifications.
+
+![](./demo/assets/types.png)
 
 ## Installation
 
@@ -12,10 +14,10 @@ npm i simple-notify
 
 ```html
 <!-- Include CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-notify@0.0.2/dist/simple-notify.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-notify@0.1.0/dist/simple-notify.min.css" />
 
 <!-- Include JS -->
-<script src="https://cdn.jsdelivr.net/npm/simple-notify@0.0.2/dist/simple-notify.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/simple-notify@0.1.0/dist/simple-notify.min.js"></script>
 ```
 
 ## Parameters
@@ -57,6 +59,26 @@ function pushNotify() {
     effect: 'slide',
     type: 3
   })
+}
+```
+
+Close manually:
+
+```js
+let myNotify
+
+function pushNotify() {
+  myNotify = new Notify({
+    status: 'success',
+    title: 'Notify Title',
+    text: 'notify text',
+    effect: 'slide',
+    type: 3
+  })
+}
+
+function close() {
+  myNotify.close()
 }
 ```
 
