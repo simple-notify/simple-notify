@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     customIcon: null,
     isIcon: true,
     isCloseButton: true,
-    autoremove: false,
+    autoclose: false,
     autotimeout: 3000,
     gap: 20,
     type: 1
@@ -59,10 +59,10 @@ document.addEventListener('DOMContentLoaded', () => {
           notify_object.text = val
           break
         case 'customClass':
-          notify_object.customClass = val
+          notify_object.customClass = `'${val}'`
           break
         case 'customIcon':
-          notify_object.customIcon = val
+          notify_object.customIcon = `'${val}'`
           break
         case 'speed':
           notify_object.speed = parseInt(val)
@@ -85,8 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const val = e.target.checked
 
       switch (data) {
-        case 'autoremove':
-          notify_object.autoremove = val
+        case 'autoclose':
+          notify_object.autoclose = val
           break
         case 'isIcon':
           notify_object.isIcon = val
@@ -111,11 +111,11 @@ btn.addEventListener('click', () => {
     text: '${notify_object.text}',
     effect: '${notify_object.effect}',
     speed: ${notify_object.speed},
-    customClass: '${notify_object.customClass}',
-    customIcon: '${notify_object.customIcon}',
+    customClass: ${notify_object.customClass},
+    customIcon: ${notify_object.customIcon},
     isIcon: ${notify_object.isIcon},
     isCloseButton: ${notify_object.isCloseButton},
-    autoremove: ${notify_object.autoremove},
+    autoclose: ${notify_object.autoclose},
     autotimeout: ${notify_object.autotimeout},
     gap: ${notify_object.gap},
     type: ${notify_object.type}
