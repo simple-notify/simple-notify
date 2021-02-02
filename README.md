@@ -6,14 +6,25 @@ Simple Notify is a pure Javascript library to show nice and customizable alert n
 
 ![](./demo/assets/types.png)
 
+## Install
+
+```bash
+npm i simple-notify
+```
+
+```js
+import Notify from 'simple-notify'
+import 'simple-notify/dist/simple-notify.min.css'
+```
+
 ## Include
 
 ```html
 <!-- CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-notify@0.2.0/dist/simple-notify.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-notify@0.2.1/dist/simple-notify.min.css" />
 
 <!-- JS -->
-<script src="https://cdn.jsdelivr.net/npm/simple-notify@0.2.0/dist/simple-notify.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/simple-notify@0.2.1/dist/simple-notify.min.js"></script>
 ```
 
 ## Parameters

@@ -2,21 +2,21 @@ import '../css/simple-notify.scss'
 import { fadeIn, fadeOut, slideIn, slideOut } from './effects'
 
 interface IArgs {
-  status: string
-  title: string
-  text: string
-  isIcon: Boolean
-  customIcon: string
-  isCloseButton: Boolean
-  customClass: string
-  speed: number
-  effect: string
-  autoclose: Boolean
-  autotimeout: number
-  gap: number
-  distance: number
-  type: number
-  position: string
+  status?: string
+  title?: string
+  text?: string
+  isIcon?: Boolean
+  customIcon?: string
+  isCloseButton?: Boolean
+  customClass?: string
+  speed?: number
+  effect?: string
+  autoclose?: Boolean
+  autotimeout?: number
+  gap?: number
+  distance?: number
+  type?: number
+  position?: string
 }
 
 export default class Notify {
