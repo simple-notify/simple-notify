@@ -40,7 +40,7 @@ npm i simple-notify
 | `gap` (margin between notifications)        | Number  |                                                                    |      20       |
 | `distance` (distance to edges)              | Number  |                                                                    |      20       |
 | `type` (just for design)                    | Number  | 1, 2, 3                                                            |       1       |
-| `position`                                  | Number  | Combine x and y position. `'left'`, `'right'`, `'top'`, '`bottom'` | `'right top'` |
+| `position`                                  | String  | Combine x and y position. `'left'`, `'right'`, `'top'`, `'bottom'` | `'right top'` |
 
 <sub>All parameters are optional but you must specify 'title' or 'text' at least.</sub>
 
