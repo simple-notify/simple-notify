@@ -3,7 +3,7 @@
   "email" : "dgknca@gmail.com",
   "description": "Simple Notify is a pure Javascript library to show nice and customizable alert notifications.",
   "keywords": ["notification", "toast", "alert", "notify"],
-  "version": "0.1.1",
+  "version": "0.2.0",
   "homepage": "https://dgknca.github.io/simple-notify/",
   "repository": "https://github.com/dgknca/simple-notify.git",
   "author": "Doğukan Çavuş",

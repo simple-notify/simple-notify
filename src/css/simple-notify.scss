@@ -2,11 +2,22 @@
   max-width: 320px;
   width: 100%;
   position: fixed;
-  height: 100vh;
-  top: 0;
-  right: 0;
+  max-height: 100vh;
   z-index: 9999;
   pointer-events: none;
+
+  &.notify-is-left {
+    left: 0;
+  }
+  &.notify-is-right {
+    right: 0;
+  }
+  &.notify-is-top {
+    top: 0;
+  }
+  &.notify-is-bottom {
+    bottom: 0;
+  }
 
   & > * {
     pointer-events: auto;
@@ -37,9 +48,19 @@
   position: relative;
   transition-timing-function: ease;
   box-sizing: border-box;
-  right: 20px;
-  margin-top: 20px;
-  margin-bottom: var(--gap);
+
+  @at-root .notify-is-left & {
+    left: var(--distance);
+  }
+  @at-root .notify-is-right & {
+    right: var(--distance);
+  }
+  @at-root .notify-is-top & {
+    margin-top: var(--gap);
+  }
+  @at-root .notify-is-bottom & {
+    margin-bottom: var(--gap);
+  }
 
   $this: &;
 
@@ -148,10 +169,19 @@
 
   &--slide {
     will-change: transform;
-    transform: translateX(calc(var(--gap) + 110%));
+
+    @at-root .notify-is-right & {
+      transform: translateX(calc(var(--distance) + 110%));
+    }
+    @at-root .notify-is-left & {
+      transform: translateX(calc((var(--distance) * -1) - 110%));
+    }
   }
 
   &--slideIn {
-    transform: translateX(0);
+    @at-root .notify-is-left &,
+      .notify-is-right & {
+      transform: translateX(0);
+    }
   }
 }

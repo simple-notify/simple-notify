@@ -12,7 +12,9 @@ interface IArgs {
     autoclose: Boolean;
     autotimeout: number;
     gap: number;
+    distance: number;
     type: number;
+    position: string;
 }
 export default class Notify {
     wrapper: HTMLElement;
@@ -29,12 +31,15 @@ export default class Notify {
     autoclose: Boolean;
     autotimeout: number;
     gap: number;
+    distance: number;
     type: number;
+    position: string;
     selectedNotifyInEffect: Function;
     selectedNotifyOutEffect: Function;
     constructor(args: IArgs);
     private checkRequirements;
     private setContainer;
+    private setPosition;
     private setCloseButton;
     private setWrapper;
     private setContent;

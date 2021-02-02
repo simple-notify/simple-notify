@@ -25,7 +25,7 @@ var Notify = /** @class */ (function () {
         this.fadeOut = fadeOut;
         this.slideIn = slideIn;
         this.slideOut = slideOut;
-        var _a = args.status, status = _a === void 0 ? null : _a, _b = args.title, title = _b === void 0 ? null : _b, _c = args.text, text = _c === void 0 ? null : _c, _d = args.isIcon, isIcon = _d === void 0 ? true : _d, _e = args.customIcon, customIcon = _e === void 0 ? null : _e, _f = args.customClass, customClass = _f === void 0 ? null : _f, _g = args.speed, speed = _g === void 0 ? 500 : _g, _h = args.effect, effect = _h === void 0 ? 'fade' : _h, _j = args.isCloseButton, isCloseButton = _j === void 0 ? true : _j, _k = args.autoclose, autoclose = _k === void 0 ? false : _k, _l = args.autotimeout, autotimeout = _l === void 0 ? 3000 : _l, _m = args.gap, gap = _m === void 0 ? 20 : _m, _o = args.type, type = _o === void 0 ? 1 : _o;
+        var _a = args.status, status = _a === void 0 ? null : _a, _b = args.title, title = _b === void 0 ? null : _b, _c = args.text, text = _c === void 0 ? null : _c, _d = args.isIcon, isIcon = _d === void 0 ? true : _d, _e = args.customIcon, customIcon = _e === void 0 ? null : _e, _f = args.customClass, customClass = _f === void 0 ? null : _f, _g = args.speed, speed = _g === void 0 ? 500 : _g, _h = args.effect, effect = _h === void 0 ? 'fade' : _h, _j = args.isCloseButton, isCloseButton = _j === void 0 ? true : _j, _k = args.autoclose, autoclose = _k === void 0 ? false : _k, _l = args.autotimeout, autotimeout = _l === void 0 ? 3000 : _l, _m = args.gap, gap = _m === void 0 ? 20 : _m, _o = args.distance, distance = _o === void 0 ? 20 : _o, _p = args.type, type = _p === void 0 ? 1 : _p, _q = args.position, position = _q === void 0 ? 'right top' : _q;
         this.status = status;
         this.title = title;
         this.text = text;
@@ -38,7 +38,9 @@ var Notify = /** @class */ (function () {
         this.autoclose = autoclose;
         this.autotimeout = autotimeout;
         this.gap = gap;
+        this.distance = distance;
         this.type = type;
+        this.position = position;
         if (!this.checkRequirements()) {
             console.error("You must specify 'title' or 'text' at least.");
             return;
@@ -47,6 +49,7 @@ var Notify = /** @class */ (function () {
         this.setContainer();
         // set wrapper for each Notify
         this.setWrapper();
+        this.setPosition();
         // set icon in the left
         if (this.isIcon)
             this.setIcon();
@@ -79,6 +82,14 @@ var Notify = /** @class */ (function () {
             this.container.classList.add('notifications-container');
             document.body.appendChild(this.container);
         }
+        this.container.style.setProperty('--distance', this.distance + "px");
+    };
+    Notify.prototype.setPosition = function () {
+        var prefix = 'notify-is-';
+        this.position.includes('left') ? this.container.classList.add(prefix + "left") : this.container.classList.remove(prefix + "left");
+        this.position.includes('right') ? this.container.classList.add(prefix + "right") : this.container.classList.remove(prefix + "right");
+        this.position.includes('top') ? this.container.classList.add(prefix + "top") : this.container.classList.remove(prefix + "top");
+        this.position.includes('bottom') ? this.container.classList.add(prefix + "bottom") : this.container.classList.remove(prefix + "bottom");
     };
     Notify.prototype.setCloseButton = function () {
         var _this = this;

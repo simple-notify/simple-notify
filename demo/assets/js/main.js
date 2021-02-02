@@ -21,7 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
     autoclose: false,
     autotimeout: 3000,
     gap: 20,
-    type: 1
+    distance: 20,
+    type: 1,
+    position: 'right top'
   }
 
   manipulateCode()
@@ -59,10 +61,10 @@ document.addEventListener('DOMContentLoaded', () => {
           notify_object.text = val
           break
         case 'customClass':
-          notify_object.customClass = val
+          notify_object.customClass = `'${val}'`
           break
         case 'customIcon':
-          notify_object.customIcon = val
+          notify_object.customIcon = `'${val}'`
           break
         case 'speed':
           notify_object.speed = parseInt(val)
@@ -72,6 +74,12 @@ document.addEventListener('DOMContentLoaded', () => {
           break
         case 'gap':
           notify_object.gap = parseInt(val)
+          break
+        case 'distance':
+          notify_object.distance = parseInt(val)
+          break
+        case 'position':
+          notify_object.position = val
           break
       }
 
@@ -111,14 +119,16 @@ btn.addEventListener('click', () => {
     text: '${notify_object.text}',
     effect: '${notify_object.effect}',
     speed: ${notify_object.speed},
-    customClass: '${notify_object.customClass}',
-    customIcon: '${notify_object.customIcon}',
+    customClass: ${notify_object.customClass},
+    customIcon: ${notify_object.customIcon},
     isIcon: ${notify_object.isIcon},
     isCloseButton: ${notify_object.isCloseButton},
     autoclose: ${notify_object.autoclose},
     autotimeout: ${notify_object.autotimeout},
     gap: ${notify_object.gap},
-    type: ${notify_object.type}
+    distance: ${notify_object.distance},
+    type: ${notify_object.type},
+    position: '${notify_object.position}'
   })
 })`,
       Prism.languages.js,

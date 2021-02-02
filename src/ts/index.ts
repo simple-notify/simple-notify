@@ -14,7 +14,9 @@ interface IArgs {
   autoclose: Boolean
   autotimeout: number
   gap: number
+  distance: number
   type: number
+  position: string
 }
 
 export default class Notify {
@@ -32,7 +34,9 @@ export default class Notify {
   autoclose: Boolean
   autotimeout: number
   gap: number
+  distance: number
   type: number
+  position: string
   selectedNotifyInEffect: Function
   selectedNotifyOutEffect: Function
 
@@ -50,7 +54,9 @@ export default class Notify {
       autoclose = false,
       autotimeout = 3000,
       gap = 20,
-      type = 1
+      distance = 20,
+      type = 1,
+      position = 'right top'
     } = args
 
     this.status = status
@@ -65,7 +71,9 @@ export default class Notify {
     this.autoclose = autoclose
     this.autotimeout = autotimeout
     this.gap = gap
+    this.distance = distance
     this.type = type
+    this.position = position
 
     if (!this.checkRequirements()) {
       console.error("You must specify 'title' or 'text' at least.")
@@ -77,6 +85,8 @@ export default class Notify {
 
     // set wrapper for each Notify
     this.setWrapper()
+
+    this.setPosition()
 
     // set icon in the left
     if (this.isIcon) this.setIcon()
@@ -114,6 +124,17 @@ export default class Notify {
       this.container.classList.add('notifications-container')
       document.body.appendChild(this.container)
     }
+
+    this.container.style.setProperty('--distance', `${this.distance}px`)
+  }
+
+  private setPosition(): void {
+    const prefix = 'notify-is-'
+
+    this.position.includes('left') ? this.container.classList.add(`${prefix}left`) : this.container.classList.remove(`${prefix}left`)
+    this.position.includes('right') ? this.container.classList.add(`${prefix}right`) : this.container.classList.remove(`${prefix}right`)
+    this.position.includes('top') ? this.container.classList.add(`${prefix}top`) : this.container.classList.remove(`${prefix}top`)
+    this.position.includes('bottom') ? this.container.classList.add(`${prefix}bottom`) : this.container.classList.remove(`${prefix}bottom`)
   }
 
   private setCloseButton(): void {
