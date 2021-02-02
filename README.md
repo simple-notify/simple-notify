@@ -24,23 +24,23 @@ npm i simple-notify
 
 ## Parameters
 
-| Parameter                                   | Type    | Values                                                     |   Default   |
-| :------------------------------------------ | :------ | :--------------------------------------------------------- | :---------: |
-| `status`                                    | String  | `'error'`, `'warning'`, `'success'`                        |   `null`    |
-| `title`                                     | String  |                                                            |   `null`    |
-| `text`                                      | String  |                                                            |   `null`    |
-| `customIcon`                                | String  | You can send any type of html.                             |   `null`    |
-| `customClass`                               | String  |                                                            |   `null`    |
-| `speed`                                     | Number  | transition-duration in milliseconds.                       |     300     |
-| `effect`                                    | String  | `'fade'`, `'slide'`                                        |   'fade'    |
-| `isIcon`                                    | Boolean |                                                            |    true     |
-| `isCloseButton`                             | Boolean |                                                            |    true     |
-| `autoclose`                                 | Boolean |                                                            |    false    |
-| `autotimeout` (valid only with `autoclose`) | Number  |                                                            |    3000     |
-| `gap` (margin between notifications)        | Number  |                                                            |     20      |
-| `distance` (distance to edges)              | Number  |                                                            |     20      |
-| `type` (just for design)                    | Number  | 1, 2, 3                                                    |      1      |
-| `position`                                  | Number  | Combine x and y position. 'left', 'right', 'top', 'bottom' | 'right top' |
+| Parameter                                   | Type    | Values                                                             |    Default    |
+| :------------------------------------------ | :------ | :----------------------------------------------------------------- | :-----------: |
+| `status`                                    | String  | `'error'`, `'warning'`, `'success'`                                |    `null`     |
+| `title`                                     | String  |                                                                    |    `null`     |
+| `text`                                      | String  |                                                                    |    `null`     |
+| `customIcon`                                | String  | You can send any type of html.                                     |    `null`     |
+| `customClass`                               | String  |                                                                    |    `null`     |
+| `speed`                                     | Number  | transition-duration in milliseconds.                               |      300      |
+| `effect`                                    | String  | `'fade'`, `'slide'`                                                |   `'fade'`    |
+| `isIcon`                                    | Boolean |                                                                    |     true      |
+| `isCloseButton`                             | Boolean |                                                                    |     true      |
+| `autoclose`                                 | Boolean |                                                                    |     false     |
+| `autotimeout` (valid only with `autoclose`) | Number  |                                                                    |     3000      |
+| `gap` (margin between notifications)        | Number  |                                                                    |      20       |
+| `distance` (distance to edges)              | Number  |                                                                    |      20       |
+| `type` (just for design)                    | Number  | 1, 2, 3                                                            |       1       |
+| `position`                                  | Number  | Combine x and y position. `'left'`, `'right'`, `'top'`, '`bottom'` | `'right top'` |
 
 <sub>All parameters are optional but you must specify 'title' or 'text' at least.</sub>
 
@@ -52,16 +52,26 @@ npm i simple-notify
 
 ## How to use
 
-Just create a new instance, notification will be sent immediately.
+Just create a new instance, notification will be sent immediately. Full example:
 
 ```js
 function pushNotify() {
   new Notify({
     status: 'success',
     title: 'Notify Title',
-    text: 'notify text',
-    effect: 'slide',
-    type: 3
+    text: 'Notify text lorem ipsum',
+    effect: 'fade',
+    speed: 300,
+    customClass: null,
+    customIcon: null,
+    isIcon: true,
+    isCloseButton: true,
+    autoclose: false,
+    autotimeout: 3000,
+    gap: 20,
+    distance: 20,
+    type: 1,
+    position: 'right top'
   })
 }
 ```
