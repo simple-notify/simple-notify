@@ -21,7 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
     autoclose: false,
     autotimeout: 3000,
     gap: 20,
-    type: 1
+    distance: 20,
+    type: 1,
+    position: 'right top'
   }
 
   manipulateCode()
@@ -73,6 +75,12 @@ document.addEventListener('DOMContentLoaded', () => {
         case 'gap':
           notify_object.gap = parseInt(val)
           break
+        case 'distance':
+          notify_object.distance = parseInt(val)
+          break
+        case 'position':
+          notify_object.position = val
+          break
       }
 
       manipulateCode()
@@ -118,7 +126,9 @@ btn.addEventListener('click', () => {
     autoclose: ${notify_object.autoclose},
     autotimeout: ${notify_object.autotimeout},
     gap: ${notify_object.gap},
-    type: ${notify_object.type}
+    distance: ${notify_object.distance},
+    type: ${notify_object.type},
+    position: '${notify_object.position}'
   })
 })`,
       Prism.languages.js,
