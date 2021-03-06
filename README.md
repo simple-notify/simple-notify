@@ -21,10 +21,10 @@ import 'simple-notify/dist/simple-notify.min.css'
 
 ```html
 <!-- CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-notify@0.2.1/dist/simple-notify.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-notify@0.3.0/dist/simple-notify.min.css" />
 
 <!-- JS -->
-<script src="https://cdn.jsdelivr.net/npm/simple-notify@0.2.1/dist/simple-notify.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/simple-notify@0.3.0/dist/simple-notify.min.js"></script>
 ```
 
 ## Parameters
@@ -38,8 +38,8 @@ import 'simple-notify/dist/simple-notify.min.css'
 | `customClass`                               | String  |                                                                    |    `null`     |
 | `speed`                                     | Number  | transition-duration in milliseconds.                               |      300      |
 | `effect`                                    | String  | `'fade'`, `'slide'`                                                |   `'fade'`    |
-| `isIcon`                                    | Boolean |                                                                    |     true      |
-| `isCloseButton`                             | Boolean |                                                                    |     true      |
+| `showIcon`                                  | Boolean |                                                                    |     true      |
+| `showCloseButton`                           | Boolean |                                                                    |     true      |
 | `autoclose`                                 | Boolean |                                                                    |     false     |
 | `autotimeout` (valid only with `autoclose`) | Number  |                                                                    |     3000      |
 | `gap` (margin between notifications)        | Number  |                                                                    |      20       |
@@ -69,8 +69,8 @@ function pushNotify() {
     speed: 300,
     customClass: null,
     customIcon: null,
-    isIcon: true,
-    isCloseButton: true,
+    showIcon: true,
+    showCloseButton: true,
     autoclose: false,
     autotimeout: 3000,
     gap: 20,

@@ -3,9 +3,9 @@ interface IArgs {
     status?: string;
     title?: string;
     text?: string;
-    isIcon?: Boolean;
+    showIcon?: Boolean;
     customIcon?: string;
-    isCloseButton?: Boolean;
+    showCloseButton?: Boolean;
     customClass?: string;
     speed?: number;
     effect?: string;
@@ -22,9 +22,9 @@ export default class Notify {
     status: string;
     title: string;
     text: string;
-    isIcon: Boolean;
+    showIcon: Boolean;
     customIcon: string;
-    isCloseButton: Boolean;
+    showCloseButton: Boolean;
     customClass: string;
     speed: number;
     effect: string;

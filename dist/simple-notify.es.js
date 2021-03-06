@@ -25,16 +25,16 @@ var Notify = /** @class */ (function () {
         this.fadeOut = fadeOut;
         this.slideIn = slideIn;
         this.slideOut = slideOut;
-        var _a = args.status, status = _a === void 0 ? null : _a, _b = args.title, title = _b === void 0 ? null : _b, _c = args.text, text = _c === void 0 ? null : _c, _d = args.isIcon, isIcon = _d === void 0 ? true : _d, _e = args.customIcon, customIcon = _e === void 0 ? null : _e, _f = args.customClass, customClass = _f === void 0 ? null : _f, _g = args.speed, speed = _g === void 0 ? 500 : _g, _h = args.effect, effect = _h === void 0 ? 'fade' : _h, _j = args.isCloseButton, isCloseButton = _j === void 0 ? true : _j, _k = args.autoclose, autoclose = _k === void 0 ? false : _k, _l = args.autotimeout, autotimeout = _l === void 0 ? 3000 : _l, _m = args.gap, gap = _m === void 0 ? 20 : _m, _o = args.distance, distance = _o === void 0 ? 20 : _o, _p = args.type, type = _p === void 0 ? 1 : _p, _q = args.position, position = _q === void 0 ? 'right top' : _q;
+        var _a = args.status, status = _a === void 0 ? null : _a, _b = args.title, title = _b === void 0 ? null : _b, _c = args.text, text = _c === void 0 ? null : _c, _d = args.showIcon, showIcon = _d === void 0 ? true : _d, _e = args.customIcon, customIcon = _e === void 0 ? null : _e, _f = args.customClass, customClass = _f === void 0 ? null : _f, _g = args.speed, speed = _g === void 0 ? 500 : _g, _h = args.effect, effect = _h === void 0 ? 'fade' : _h, _j = args.showCloseButton, showCloseButton = _j === void 0 ? true : _j, _k = args.autoclose, autoclose = _k === void 0 ? false : _k, _l = args.autotimeout, autotimeout = _l === void 0 ? 3000 : _l, _m = args.gap, gap = _m === void 0 ? 20 : _m, _o = args.distance, distance = _o === void 0 ? 20 : _o, _p = args.type, type = _p === void 0 ? 1 : _p, _q = args.position, position = _q === void 0 ? 'right top' : _q;
         this.status = status;
         this.title = title;
         this.text = text;
-        this.isIcon = isIcon;
+        this.showIcon = showIcon;
         this.customIcon = customIcon;
         this.customClass = customClass;
         this.speed = speed;
         this.effect = effect;
-        this.isCloseButton = isCloseButton;
+        this.showCloseButton = showCloseButton;
         this.autoclose = autoclose;
         this.autotimeout = autotimeout;
         this.gap = gap;
@@ -51,10 +51,10 @@ var Notify = /** @class */ (function () {
         this.setWrapper();
         this.setPosition();
         // set icon in the left
-        if (this.isIcon)
+        if (this.showIcon)
             this.setIcon();
         // set close button
-        if (this.isCloseButton)
+        if (this.showCloseButton)
             this.setCloseButton();
         // set title, text
         this.setContent();
@@ -120,7 +120,7 @@ var Notify = /** @class */ (function () {
         var titleElement = document.createElement('div');
         titleElement.classList.add('notify__title');
         titleElement.textContent = this.title;
-        if (!this.isCloseButton)
+        if (!this.showCloseButton)
             titleElement.style.paddingRight = '0';
         var textElement = document.createElement('div');
         textElement.classList.add('notify__text');

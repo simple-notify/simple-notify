@@ -5,9 +5,9 @@ interface IArgs {
   status?: string
   title?: string
   text?: string
-  isIcon?: Boolean
+  showIcon?: Boolean
   customIcon?: string
-  isCloseButton?: Boolean
+  showCloseButton?: Boolean
   customClass?: string
   speed?: number
   effect?: string
@@ -25,9 +25,9 @@ export default class Notify {
   status: string
   title: string
   text: string
-  isIcon: Boolean
+  showIcon: Boolean
   customIcon: string
-  isCloseButton: Boolean
+  showCloseButton: Boolean
   customClass: string
   speed: number
   effect: string
@@ -45,12 +45,12 @@ export default class Notify {
       status = null,
       title = null,
       text = null,
-      isIcon = true,
+      showIcon = true,
       customIcon = null,
       customClass = null,
       speed = 500,
       effect = 'fade',
-      isCloseButton = true,
+      showCloseButton = true,
       autoclose = false,
       autotimeout = 3000,
       gap = 20,
@@ -62,12 +62,12 @@ export default class Notify {
     this.status = status
     this.title = title
     this.text = text
-    this.isIcon = isIcon
+    this.showIcon = showIcon
     this.customIcon = customIcon
     this.customClass = customClass
     this.speed = speed
     this.effect = effect
-    this.isCloseButton = isCloseButton
+    this.showCloseButton = showCloseButton
     this.autoclose = autoclose
     this.autotimeout = autotimeout
     this.gap = gap
@@ -89,10 +89,10 @@ export default class Notify {
     this.setPosition()
 
     // set icon in the left
-    if (this.isIcon) this.setIcon()
+    if (this.showIcon) this.setIcon()
 
     // set close button
-    if (this.isCloseButton) this.setCloseButton()
+    if (this.showCloseButton) this.setCloseButton()
 
     // set title, text
     this.setContent()
@@ -171,7 +171,7 @@ export default class Notify {
     const titleElement = document.createElement('div')
     titleElement.classList.add('notify__title')
     titleElement.textContent = this.title
-    if (!this.isCloseButton) titleElement.style.paddingRight = '0'
+    if (!this.showCloseButton) titleElement.style.paddingRight = '0'
 
     const textElement = document.createElement('div')
     textElement.classList.add('notify__text')

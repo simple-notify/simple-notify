@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
     speed: 300,
     customClass: null,
     customIcon: null,
-    isIcon: true,
-    isCloseButton: true,
+    showIcon: true,
+    showCloseButton: true,
     autoclose: false,
     autotimeout: 3000,
     gap: 20,
@@ -96,11 +96,11 @@ document.addEventListener('DOMContentLoaded', () => {
         case 'autoclose':
           notify_object.autoclose = val
           break
-        case 'isIcon':
-          notify_object.isIcon = val
+        case 'showIcon':
+          notify_object.showIcon = val
           break
-        case 'isCloseButton':
-          notify_object.isCloseButton = val
+        case 'showCloseButton':
+          notify_object.showCloseButton = val
           break
       }
 
@@ -121,8 +121,8 @@ btn.addEventListener('click', () => {
     speed: ${notify_object.speed},
     customClass: ${notify_object.customClass},
     customIcon: ${notify_object.customIcon},
-    isIcon: ${notify_object.isIcon},
-    isCloseButton: ${notify_object.isCloseButton},
+    showIcon: ${notify_object.showIcon},
+    showCloseButton: ${notify_object.showCloseButton},
     autoclose: ${notify_object.autoclose},
     autotimeout: ${notify_object.autotimeout},
     gap: ${notify_object.gap},
