@@ -1,6 +1,13 @@
 import '../css/simple-notify.scss';
+declare type notifyType = 1 | 2 | 3;
+declare type notifyStatus = 'success' | 'warning' | 'error';
+declare type notifyEffect = 'fade' | 'slide';
+declare type notifyPosition = 'left top' | 'top left' | 'right top' | 'top right' | 'left bottom' | 'bottom left' | 'right bottom' | 'bottom right';
 interface IArgs {
-    status?: string;
+    status?: notifyStatus;
+    type?: notifyType;
+    effect?: notifyEffect;
+    position?: notifyPosition;
     title?: string;
     text?: string;
     showIcon?: Boolean;
@@ -8,18 +15,18 @@ interface IArgs {
     showCloseButton?: Boolean;
     customClass?: string;
     speed?: number;
-    effect?: string;
     autoclose?: Boolean;
     autotimeout?: number;
     gap?: number;
     distance?: number;
-    type?: number;
-    position?: string;
 }
 export default class Notify {
     wrapper: HTMLElement;
     container: HTMLElement;
-    status: string;
+    status: notifyStatus;
+    type: notifyType;
+    effect: notifyEffect;
+    position: notifyPosition;
     title: string;
     text: string;
     showIcon: Boolean;
@@ -27,13 +34,10 @@ export default class Notify {
     showCloseButton: Boolean;
     customClass: string;
     speed: number;
-    effect: string;
     autoclose: Boolean;
     autotimeout: number;
     gap: number;
     distance: number;
-    type: number;
-    position: string;
     selectedNotifyInEffect: Function;
     selectedNotifyOutEffect: Function;
     constructor(args: IArgs);
