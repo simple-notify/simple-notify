@@ -122,6 +122,10 @@ The colors and some sizes can be customized easily using CSS variables. You can 
 }
 ```
 
+## Do you need another feature?
+
+If you want any feature, just open an issue and make sure I'll add it ASAP. Also feel free to send PR, contributions are welcomed.
+
 ## Credits
 
 Designed by [Prabesh Shakya](https://www.figma.com/@prabesh)
