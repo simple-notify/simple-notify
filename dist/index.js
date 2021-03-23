@@ -88,10 +88,13 @@ var Notify = /** @class */ (function () {
     };
     Notify.prototype.setPosition = function () {
         var prefix = 'notify-is-';
+        this.position === 'center' ? this.container.classList.add(prefix + "center") : this.container.classList.remove(prefix + "center");
         this.position.includes('left') ? this.container.classList.add(prefix + "left") : this.container.classList.remove(prefix + "left");
         this.position.includes('right') ? this.container.classList.add(prefix + "right") : this.container.classList.remove(prefix + "right");
+        this.position.includes('x-center') ? this.container.classList.add(prefix + "x-center") : this.container.classList.remove(prefix + "x-center");
         this.position.includes('top') ? this.container.classList.add(prefix + "top") : this.container.classList.remove(prefix + "top");
         this.position.includes('bottom') ? this.container.classList.add(prefix + "bottom") : this.container.classList.remove(prefix + "bottom");
+        this.position.includes('y-center') ? this.container.classList.add(prefix + "y-center") : this.container.classList.remove(prefix + "y-center");
     };
     Notify.prototype.setCloseButton = function () {
         var _this = this;

@@ -6,6 +6,20 @@
   z-index: 9999;
   pointer-events: none;
 
+  &.notify-is-x-center {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &.notify-is-y-center {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &.notify-is-center {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
   &.notify-is-left {
     left: 0;
   }
@@ -17,6 +31,13 @@
   }
   &.notify-is-bottom {
     bottom: 0;
+  }
+
+  &.notify-is-x-center.notify-is-top {
+    top: var(--distance);
+  }
+  &.notify-is-x-center.notify-is-bottom {
+    bottom: var(--distance);
   }
 
   & > * {
@@ -55,10 +76,14 @@
   @at-root .notify-is-right & {
     right: var(--distance);
   }
-  @at-root .notify-is-top & {
+  @at-root .notify-is-top &,
+    .notify-is-center &,
+    .notify-is-y-center &,
+    .notify-is-x-center.notify-is-top & {
     margin-top: var(--gap);
   }
-  @at-root .notify-is-bottom & {
+  @at-root .notify-is-bottom &,
+    .notify-is-x-center:not(.notify-is-top) & {
     margin-bottom: var(--gap);
   }
 
@@ -168,8 +193,17 @@
   }
 
   &--slide {
-    will-change: transform;
+    will-change: opacity, transform;
+    opacity: 0;
 
+    @at-root .notify-is-center &,
+      .notify-is-y-center &,
+      .notify-is-x-center:not(.notify-is-bottom) & {
+      transform: translateY(-20px);
+    }
+    @at-root .notify-is-x-center.notify-is-bottom & {
+      transform: translateY(20px);
+    }
     @at-root .notify-is-right & {
       transform: translateX(calc(var(--distance) + 110%));
     }
@@ -179,8 +213,16 @@
   }
 
   &--slideIn {
-    @at-root .notify-is-left &,
-      .notify-is-right & {
+    @at-root .notify-is-x-center:not(.notify-is-bottom) &,
+      .notify-is-center &,
+      .notify-is-y-center &,
+      .notify-is-x-center.notify-is-bottom & {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @at-root .notify-is-right &,
+      .notify-is-left & {
+      opacity: 1;
       transform: translateX(0);
     }
   }

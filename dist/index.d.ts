@@ -2,7 +2,7 @@ import '../css/simple-notify.scss';
 declare type notifyType = 1 | 2 | 3;
 declare type notifyStatus = 'success' | 'warning' | 'error';
 declare type notifyEffect = 'fade' | 'slide';
-declare type notifyPosition = 'left top' | 'top left' | 'right top' | 'top right' | 'left bottom' | 'bottom left' | 'right bottom' | 'bottom right';
+declare type notifyPosition = 'left top' | 'top left' | 'right top' | 'top right' | 'left bottom' | 'bottom left' | 'right bottom' | 'bottom right' | 'center' | 'left y-center' | 'right y-center' | 'y-center left' | 'y-center right' | 'top x-center' | 'bottom x-center' | 'x-center top' | 'x-center bottom';
 interface IArgs {
     status?: notifyStatus;
     type?: notifyType;
