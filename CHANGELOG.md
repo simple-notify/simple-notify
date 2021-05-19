@@ -1,5 +1,9 @@
 # simple-notify Changelog
 
+## 0.5.0
+
+- [Feature] Added raw html support for `text` parameter https://github.com/dgknca/simple-notify/pull/5
+
 ## 0.4.0
 
 - Added 3 new positions `'(top/bottom) x-center'`, `'(left/right) y-center'` and `'center'`
