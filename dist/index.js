@@ -27,10 +27,11 @@ var Notify = /** @class */ (function () {
         this.fadeOut = fadeOut;
         this.slideIn = slideIn;
         this.slideOut = slideOut;
-        var _a = args.status, status = _a === void 0 ? null : _a, _b = args.type, type = _b === void 0 ? 1 : _b, _c = args.title, title = _c === void 0 ? null : _c, _d = args.text, text = _d === void 0 ? null : _d, _e = args.showIcon, showIcon = _e === void 0 ? true : _e, _f = args.customIcon, customIcon = _f === void 0 ? null : _f, _g = args.customClass, customClass = _g === void 0 ? null : _g, _h = args.speed, speed = _h === void 0 ? 500 : _h, _j = args.effect, effect = _j === void 0 ? 'fade' : _j, _k = args.showCloseButton, showCloseButton = _k === void 0 ? true : _k, _l = args.autoclose, autoclose = _l === void 0 ? false : _l, _m = args.autotimeout, autotimeout = _m === void 0 ? 3000 : _m, _o = args.gap, gap = _o === void 0 ? 20 : _o, _p = args.distance, distance = _p === void 0 ? 20 : _p, _q = args.position, position = _q === void 0 ? 'right top' : _q;
+        var _a = args.status, status = _a === void 0 ? null : _a, _b = args.type, type = _b === void 0 ? 1 : _b, _c = args.title, title = _c === void 0 ? null : _c, _d = args.text, text = _d === void 0 ? null : _d, _e = args.isHtml, isHtml = _e === void 0 ? false : _e, _f = args.showIcon, showIcon = _f === void 0 ? true : _f, _g = args.customIcon, customIcon = _g === void 0 ? null : _g, _h = args.customClass, customClass = _h === void 0 ? null : _h, _j = args.speed, speed = _j === void 0 ? 500 : _j, _k = args.effect, effect = _k === void 0 ? 'fade' : _k, _l = args.showCloseButton, showCloseButton = _l === void 0 ? true : _l, _m = args.autoclose, autoclose = _m === void 0 ? false : _m, _o = args.autotimeout, autotimeout = _o === void 0 ? 3000 : _o, _p = args.gap, gap = _p === void 0 ? 20 : _p, _q = args.distance, distance = _q === void 0 ? 20 : _q, _r = args.position, position = _r === void 0 ? 'right top' : _r;
         this.status = status;
         this.title = title;
         this.text = text;
+        this.isHtml = isHtml;
         this.showIcon = showIcon;
         this.customIcon = customIcon;
         this.customClass = customClass;
@@ -129,7 +130,12 @@ var Notify = /** @class */ (function () {
             titleElement.style.paddingRight = '0';
         var textElement = document.createElement('div');
         textElement.classList.add('notify__text');
-        textElement.textContent = this.text;
+        if (!this.isHtml) {
+            textElement.textContent = this.text;
+        }
+        else {
+            textElement.innerHTML = this.text;
+        }
         if (!this.title)
             textElement.style.marginTop = '0';
         this.wrapper.appendChild(contentWrapper);

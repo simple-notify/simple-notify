@@ -14,6 +14,7 @@ interface IArgs {
   position?: notifyPosition
   title?: string
   text?: string
+  isHtml?: Boolean
   showIcon?: Boolean
   customIcon?: string
   showCloseButton?: Boolean
@@ -34,6 +35,7 @@ export default class Notify {
   position: notifyPosition
   title: string
   text: string
+  isHtml: Boolean
   showIcon: Boolean
   customIcon: string
   showCloseButton: Boolean
@@ -52,6 +54,7 @@ export default class Notify {
       type = 1,
       title = null,
       text = null,
+      isHtml = false,
       showIcon = true,
       customIcon = null,
       customClass = null,
@@ -68,6 +71,7 @@ export default class Notify {
     this.status = status
     this.title = title
     this.text = text
+    this.isHtml = isHtml
     this.showIcon = showIcon
     this.customIcon = customIcon
     this.customClass = customClass
@@ -184,7 +188,11 @@ export default class Notify {
 
     const textElement = document.createElement('div')
     textElement.classList.add('notify__text')
-    textElement.textContent = this.text
+    if (!this.isHtml) {
+      textElement.textContent = this.text
+    } else {
+      textElement.innerHTML = this.text
+    }
     if (!this.title) textElement.style.marginTop = '0'
 
     this.wrapper.appendChild(contentWrapper)

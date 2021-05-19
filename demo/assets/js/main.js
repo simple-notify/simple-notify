@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     status: 'success',
     title: 'Notify Title',
     text: 'Notify text lorem ipsum',
+    isHtml: false,
     effect: 'fade',
     speed: 300,
     customClass: null,
@@ -93,6 +94,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const val = e.target.checked
 
       switch (data) {
+        case 'isHtml':
+          notify_object.isHtml = val
+          break
         case 'autoclose':
           notify_object.autoclose = val
           break
@@ -117,6 +121,7 @@ btn.addEventListener('click', () => {
     status: '${notify_object.status}',
     title: '${notify_object.title}',
     text: '${notify_object.text}',
+    isHtml: ${notify_object.isHtml},
     effect: '${notify_object.effect}',
     speed: ${notify_object.speed},
     customClass: ${notify_object.customClass},

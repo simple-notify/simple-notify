@@ -10,6 +10,7 @@ interface IArgs {
     position?: notifyPosition;
     title?: string;
     text?: string;
+    isHtml?: Boolean;
     showIcon?: Boolean;
     customIcon?: string;
     showCloseButton?: Boolean;
@@ -29,6 +30,7 @@ export default class Notify {
     position: notifyPosition;
     title: string;
     text: string;
+    isHtml: Boolean;
     showIcon: Boolean;
     customIcon: string;
     showCloseButton: Boolean;
