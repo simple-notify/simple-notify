@@ -184,7 +184,7 @@ export default class Notify {
 
     const textElement = document.createElement('div')
     textElement.classList.add('notify__text')
-    textElement.textContent = this.text
+    textElement.innerHTML = this.text.trim()
     if (!this.title) textElement.style.marginTop = '0'
 
     this.wrapper.appendChild(contentWrapper)
