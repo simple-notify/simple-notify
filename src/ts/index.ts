@@ -48,13 +48,13 @@ export default class Notify {
 
   constructor(args: IArgs) {
     const {
-      status = null,
+      status,
       type = 1,
-      title = null,
-      text = null,
+      title,
+      text,
       showIcon = true,
-      customIcon = null,
-      customClass = null,
+      customIcon,
+      customClass,
       speed = 500,
       effect = 'fade',
       showCloseButton = true,
@@ -177,19 +177,25 @@ export default class Notify {
     const contentWrapper = document.createElement('div')
     contentWrapper.classList.add('notify-content')
 
-    const titleElement = document.createElement('div')
-    titleElement.classList.add('notify__title')
-    titleElement.textContent = this.title
-    if (!this.showCloseButton) titleElement.style.paddingRight = '0'
+    let titleElement, textElement
 
-    const textElement = document.createElement('div')
-    textElement.classList.add('notify__text')
-    textElement.innerHTML = this.text.trim()
-    if (!this.title) textElement.style.marginTop = '0'
+    if (this.title) {
+      titleElement = document.createElement('div')
+      titleElement.classList.add('notify__title')
+      titleElement.textContent = this.title
+      if (!this.showCloseButton) titleElement.style.paddingRight = '0'
+    }
+
+    if (this.text) {
+      textElement = document.createElement('div')
+      textElement.classList.add('notify__text')
+      textElement.innerHTML = this.text.trim()
+      if (!this.title) textElement.style.marginTop = '0'
+    }
 
     this.wrapper.appendChild(contentWrapper)
-    contentWrapper.appendChild(titleElement)
-    contentWrapper.appendChild(textElement)
+    if (this.title) contentWrapper.appendChild(titleElement)
+    if (this.text) contentWrapper.appendChild(textElement)
   }
 
   private setIcon(): void {
