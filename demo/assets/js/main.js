@@ -61,10 +61,10 @@ document.addEventListener('DOMContentLoaded', () => {
           notify_object.text = val
           break
         case 'customClass':
-          notify_object.customClass = `${val}`
+          notify_object.customClass = `'${val}'`
           break
         case 'customIcon':
-          notify_object.customIcon = `${val}`
+          notify_object.customIcon = `'${val}'`
           break
         case 'speed':
           notify_object.speed = parseInt(val)
