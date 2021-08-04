@@ -1,9 +1,14 @@
 {
   "name": "simple-notify",
-  "email" : "dgknca@gmail.com",
+  "email": "dgknca@gmail.com",
   "description": "Simple Notify is a pure Javascript library to show nice and customizable alert notifications.",
-  "keywords": ["notification", "toast", "alert", "notify"],
-  "version": "0.5.2",
+  "keywords": [
+    "notification",
+    "toast",
+    "alert",
+    "notify"
+  ],
+  "version": "0.5.3",
   "homepage": "https://dgknca.github.io/simple-notify/",
   "repository": "https://github.com/dgknca/simple-notify.git",
   "author": "Doğukan Çavuş",
@@ -20,12 +25,13 @@
     "deploy": "gh-pages -d demo"
   },
   "devDependencies": {
-    "gh-pages": "^3.1.0",
-    "prettier": "^2.2.1",
-    "rollup": "^2.38.1",
-    "rollup-plugin-scss": "^2.6.1",
+    "gh-pages": "^3.2.3",
+    "node-sass": "^6.0.1",
+    "prettier": "^2.3.2",
+    "rollup": "^2.55.1",
+    "rollup-plugin-scss": "^3.0.0",
     "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-typescript2": "^0.29.0",
-    "typescript": "^4.1.3"
+    "rollup-plugin-typescript2": "^0.30.0",
+    "typescript": "^4.3.5"
   }
 }
