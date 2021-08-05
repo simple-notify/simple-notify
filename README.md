@@ -21,10 +21,10 @@ import 'simple-notify/dist/simple-notify.min.css'
 
 ```html
 <!-- CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-notify@0.5.2/dist/simple-notify.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-notify@0.5.4/dist/simple-notify.min.css" />
 
 <!-- JS -->
-<script src="https://cdn.jsdelivr.net/npm/simple-notify@0.5.2/dist/simple-notify.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/simple-notify@0.5.4/dist/simple-notify.min.js"></script>
 ```
 
 ## Parameters
