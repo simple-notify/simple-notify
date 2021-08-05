@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
     text: 'Notify text lorem ipsum',
     effect: 'fade',
     speed: 300,
-    customClass: null,
-    customIcon: null,
+    customClass: '',
+    customIcon: '',
     showIcon: true,
     showCloseButton: true,
     autoclose: false,
@@ -61,10 +61,10 @@ document.addEventListener('DOMContentLoaded', () => {
           notify_object.text = val
           break
         case 'customClass':
-          notify_object.customClass = `'${val}'`
+          notify_object.customClass = `${val}`
           break
         case 'customIcon':
-          notify_object.customIcon = `'${val}'`
+          notify_object.customIcon = `${val}`
           break
         case 'speed':
           notify_object.speed = parseInt(val)
@@ -119,8 +119,8 @@ btn.addEventListener('click', () => {
     text: '${notify_object.text}',
     effect: '${notify_object.effect}',
     speed: ${notify_object.speed},
-    customClass: ${notify_object.customClass},
-    customIcon: ${notify_object.customIcon},
+    customClass: '${notify_object.customClass}',
+    customIcon: '${notify_object.customIcon}',
     showIcon: ${notify_object.showIcon},
     showCloseButton: ${notify_object.showCloseButton},
     autoclose: ${notify_object.autoclose},
