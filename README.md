@@ -122,20 +122,6 @@ The colors and some sizes can be customized easily using CSS variables. You can 
 }
 ```
 
-## Development
-
-- `yarn` to install dependencies
-- `yarn watch` to watch files
-- `yarn build` to build once
-
-## Contributing
-
-1.  Fork it!
-2.  Create your feature branch: `git checkout -b my-new-feature`
-3.  Commit your changes: `git commit -m 'Add some feature'`
-4.  Push to the branch: `git push origin my-new-feature`
-5.  Submit a pull request
-
 ## Do you need another feature?
 
 If you want any feature, just open an issue and make sure I'll add it ASAP. Also feel free to send PR, contributions are welcomed.
