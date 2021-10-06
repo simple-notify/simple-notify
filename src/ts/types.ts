@@ -11,12 +11,12 @@ export interface IArgs {
     position?: Position
     title?: string
     text?: string
-    showIcon?: Boolean
+    showIcon?: boolean
     customIcon?: string
-    showCloseButton?: Boolean
+    showCloseButton?: boolean
     customClass?: string
     speed?: number
-    autoclose?: Boolean
+    autoclose?: boolean
     autotimeout?: number
     gap?: number
     distance?: number
