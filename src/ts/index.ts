@@ -1,4 +1,3 @@
-
 import '../css/simple-notify.scss'
 import { fadeIn, fadeOut, slideIn, slideOut } from './effects'
 import { notifyType, notifyStatus, notifyEffect, notifyPosition } from './types'
