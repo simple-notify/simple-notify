@@ -55,6 +55,7 @@
   --notify-error: #eb5757;
   --notify-success: #6fcf97;
   --notify-warning: #f2c94c;
+  --notify-warning: #51cdf3;
   --notify-gray: #333;
   --notify-gray-2: #4d4d4d;
   --notify-gray-3: #828282;
@@ -171,6 +172,17 @@
     &#{$this}--type-2,
     &#{$this}--type-3 {
       background-color: var(--notify-success);
+    }
+  }
+
+  &--info {
+    &#{$this}--type-1 {
+      box-shadow: 0 2px 26px #51cdf336;
+      color: var(--notify-info);
+    }
+    &#{$this}--type-2,
+    &#{$this}--type-3 {
+      background-color: var(--notify-info);
     }
   }
 
