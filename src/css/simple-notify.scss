@@ -46,7 +46,7 @@
     bottom: var(--distance);
   }
 
-  & > * {
+  > * {
     pointer-events: auto;
   }
 }

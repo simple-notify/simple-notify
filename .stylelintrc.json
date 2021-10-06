@@ -30,17 +30,7 @@
     "function-url-quotes": "always",
     "indentation": 2,
     "length-zero-no-unit": true,
-    "max-nesting-depth": [
-      1,
-      {
-        "ignoreAtRules": [
-          "each",
-          "media",
-          "supports",
-          "include"
-        ]
-      }
-    ],
+    "max-nesting-depth": null,
     "media-feature-name-no-vendor-prefix": true,
     "media-feature-parentheses-space-inside": "never",
     "no-missing-end-of-source-newline": true,
@@ -70,7 +60,7 @@
     ],
     "order/properties-alphabetical-order": true,
     "property-no-unknown": true,
-    "property-no-vendor-prefix": true,
+    "property-no-vendor-prefix": null,
     "rule-empty-line-before": [
       "always-multi-line",
       {
