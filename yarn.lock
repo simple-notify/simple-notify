@@ -1521,6 +1521,11 @@
     "jsprim" "^1.2.2"
     "sshpk" "^1.7.0"
 
+"husky@^7.0.2":
+  "integrity" "sha512-8yKEWNX4z2YsofXAMT7KvA1g8p+GxtB1ffV8XtpAEGuXNAbCV5wdNKH+qTpw8SM9fh4aMPDR+yQuKfgnreyZlg=="
+  "resolved" "https://registry.npmjs.org/husky/-/husky-7.0.2.tgz"
+  "version" "7.0.2"
+
 "ignore@^4.0.6":
   "integrity" "sha512-cyFDKrqc/YdcWFniJhzI42+AzS+gNwmUzOSFcRCQYwySuBBBy/KjuxWLZ/FHEH6Moq1NizMOBWyTcv8O4OZIMg=="
   "resolved" "https://registry.npmjs.org/ignore/-/ignore-4.0.6.tgz"
