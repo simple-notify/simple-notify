@@ -1,0 +1,8 @@
+node_modules
+dist
+
+# From gitignore:
+.idea
+.vscode
+debug.log
+yarn-error.log
