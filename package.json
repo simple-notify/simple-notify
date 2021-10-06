@@ -23,13 +23,20 @@
     "build": "rollup -c",
     "watch": "rollup -cw",
     "deploy": "gh-pages -d demo",
-    "lint": "eslint . --ext .ts"
+    "lint": "eslint . --ext .ts",
+    "format": "prettier --write ./src"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn format && git add ."
+    }
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
     "eslint": "^7.32.0",
     "gh-pages": "^3.2.3",
+    "husky": "^7.0.2",
     "node-sass": "^6.0.1",
     "prettier": "^2.4.1",
     "rollup": "^2.58.0",
