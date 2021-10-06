@@ -1,19 +1,21 @@
 .notifications-container {
-  max-width: 320px;
-  width: 100%;
-  position: fixed;
   max-height: 100vh;
-  z-index: 9999;
+  max-width: 320px;
   pointer-events: none;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
 
   &.notify-is-x-center {
     left: 50%;
     transform: translateX(-50%);
   }
+
   &.notify-is-y-center {
     top: 50%;
     transform: translateY(-50%);
   }
+
   &.notify-is-center {
     left: 50%;
     top: 50%;
@@ -23,12 +25,15 @@
   &.notify-is-left {
     left: 0;
   }
+
   &.notify-is-right {
     right: 0;
   }
+
   &.notify-is-top {
     top: 0;
   }
+
   &.notify-is-bottom {
     bottom: 0;
   }
@@ -36,6 +41,7 @@
   &.notify-is-x-center.notify-is-top {
     top: var(--distance);
   }
+
   &.notify-is-x-center.notify-is-bottom {
     bottom: var(--distance);
   }
@@ -49,7 +55,7 @@
   --notify-error: #eb5757;
   --notify-success: #6fcf97;
   --notify-warning: #f2c94c;
-  --notify-gray: #333333;
+  --notify-gray: #333;
   --notify-gray-2: #4d4d4d;
   --notify-gray-3: #828282;
   --notify-white: #fff;
@@ -58,57 +64,40 @@
   --notify-icon-size: 32px;
   --notify-close-icon-size: 16px;
 
+  $this: &;
+  align-items: center;
+  border-radius: 6px;
+  box-sizing: border-box;
+  display: flex;
+
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   padding: var(--notify-padding);
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  width: 100%;
   position: relative;
-  user-select: none;
   position: relative;
   transition-timing-function: ease;
-  box-sizing: border-box;
-
-  @at-root .notify-is-left & {
-    left: var(--distance);
-  }
-  @at-root .notify-is-right & {
-    right: var(--distance);
-  }
-  @at-root .notify-is-top &,
-    .notify-is-center &,
-    .notify-is-y-center &,
-    .notify-is-x-center.notify-is-top & {
-    margin-top: var(--gap);
-  }
-  @at-root .notify-is-bottom &,
-    .notify-is-x-center:not(.notify-is-top) & {
-    margin-bottom: var(--gap);
-  }
-
-  $this: &;
+  user-select: none;
+  width: 100%;
 
   &__icon {
-    height: var(--notify-icon-size);
-    width: var(--notify-icon-size);
-    flex-shrink: 0;
-    display: flex;
     align-items: center;
+    display: flex;
+    flex-shrink: 0;
+    height: var(--notify-icon-size);
     justify-content: center;
     margin-right: 12px;
+    width: var(--notify-icon-size);
   }
 
   &__close {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    height: var(--notify-close-icon-size);
+    justify-content: center;
     position: absolute;
     right: 12px;
     top: 12px;
-    cursor: pointer;
-    height: var(--notify-close-icon-size);
     width: var(--notify-close-icon-size);
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
     * {
       pointer-events: none;
@@ -116,8 +105,8 @@
   }
 
   &__title {
-    font-weight: 600;
     font-size: 1rem;
+    font-weight: 600;
     padding-right: calc(var(--notify-padding) + var(--notify-close-icon-size));
   }
 
@@ -144,6 +133,7 @@
   &--type-2 {
     color: var(--notify-gray);
   }
+
   &--type-3 {
     color: var(--notify-white);
     #{$this}__text {
@@ -161,6 +151,7 @@
       background-color: var(--notify-error);
     }
   }
+
   &--warning {
     &#{$this}--type-1 {
       box-shadow: 0 2px 26px rgba(#f2c94c, 0.1);
@@ -171,6 +162,7 @@
       background-color: var(--notify-warning);
     }
   }
+
   &--success {
     &#{$this}--type-1 {
       box-shadow: 0 2px 26px rgba(#52d700, 0.1);
@@ -184,8 +176,8 @@
 
   // effects
   &--fade {
-    will-change: opacity;
     opacity: 0;
+    will-change: opacity;
   }
 
   &--fadeIn {
@@ -193,12 +185,12 @@
   }
 
   &--slide {
-    will-change: opacity, transform;
     opacity: 0;
+    will-change: opacity, transform;
 
     @at-root .notify-is-center &,
-      .notify-is-y-center &,
-      .notify-is-x-center:not(.notify-is-bottom) & {
+    .notify-is-y-center &,
+    .notify-is-x-center:not(.notify-is-bottom) & {
       transform: translateY(-20px);
     }
     @at-root .notify-is-x-center.notify-is-bottom & {
@@ -214,16 +206,33 @@
 
   &--slideIn {
     @at-root .notify-is-x-center:not(.notify-is-bottom) &,
-      .notify-is-center &,
-      .notify-is-y-center &,
+    .notify-is-center &,
+    .notify-is-y-center &,
       .notify-is-x-center.notify-is-bottom & {
       opacity: 1;
       transform: translateY(0);
     }
     @at-root .notify-is-right &,
-      .notify-is-left & {
+    .notify-is-left & {
       opacity: 1;
       transform: translateX(0);
     }
+  }
+
+  @at-root .notify-is-left & {
+    left: var(--distance);
+  }
+  @at-root .notify-is-right & {
+    right: var(--distance);
+  }
+  @at-root .notify-is-top &,
+  .notify-is-center &,
+  .notify-is-y-center &,
+    .notify-is-x-center.notify-is-top & {
+    margin-top: var(--gap);
+  }
+  @at-root .notify-is-bottom &,
+  .notify-is-x-center:not(.notify-is-top) & {
+    margin-bottom: var(--gap);
   }
 }
