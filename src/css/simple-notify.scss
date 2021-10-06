@@ -46,7 +46,7 @@
     bottom: var(--distance);
   }
 
-  & > * {
+  > * {
     pointer-events: auto;
   }
 }
@@ -55,6 +55,7 @@
   --notify-error: #eb5757;
   --notify-success: #6fcf97;
   --notify-warning: #f2c94c;
+  --notify-info: #51cdf3;
   --notify-gray: #333;
   --notify-gray-2: #4d4d4d;
   --notify-gray-3: #828282;
@@ -174,6 +175,17 @@
     }
   }
 
+  &--info {
+    &#{$this}--type-1 {
+      box-shadow: 0 2px 26px rgba(#54afca, 0.1);
+      color: var(--notify-info);
+    }
+    &#{$this}--type-2,
+    &#{$this}--type-3 {
+      background-color: var(--notify-info);
+    }
+  }
+
   // effects
   &--fade {
     opacity: 0;
@@ -208,7 +220,7 @@
     @at-root .notify-is-x-center:not(.notify-is-bottom) &,
     .notify-is-center &,
     .notify-is-y-center &,
-      .notify-is-x-center.notify-is-bottom & {
+    .notify-is-x-center.notify-is-bottom & {
       opacity: 1;
       transform: translateY(0);
     }
@@ -228,7 +240,7 @@
   @at-root .notify-is-top &,
   .notify-is-center &,
   .notify-is-y-center &,
-    .notify-is-x-center.notify-is-top & {
+  .notify-is-x-center.notify-is-top & {
     margin-top: var(--gap);
   }
   @at-root .notify-is-bottom &,
