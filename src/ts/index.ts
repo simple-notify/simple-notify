@@ -1,24 +1,6 @@
 import '../css/simple-notify.scss'
 import { fadeIn, fadeOut, slideIn, slideOut } from './effects'
-import { notifyType, notifyStatus, notifyEffect, notifyPosition } from './types'
-
-interface IArgs {
-  status?: notifyStatus
-  type?: notifyType
-  effect?: notifyEffect
-  position?: notifyPosition
-  title?: string
-  text?: string
-  showIcon?: Boolean
-  customIcon?: string
-  showCloseButton?: Boolean
-  customClass?: string
-  speed?: number
-  autoclose?: Boolean
-  autotimeout?: number
-  gap?: number
-  distance?: number
-}
+import { notifyType, notifyStatus, notifyEffect, notifyPosition, IArgs } from './types'
 
 export default class Notify {
   wrapper: HTMLElement
