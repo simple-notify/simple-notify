@@ -46,20 +46,24 @@
     bottom: var(--distance);
   }
 
-  > * {
+  >* {
     pointer-events: auto;
   }
 }
 
 .notify {
-  --notify-error: #eb5757;
-  --notify-success: #6fcf97;
-  --notify-warning: #f2c94c;
-  --notify-info: #51cdf3;
-  --notify-gray: #333;
-  --notify-gray-2: #4d4d4d;
-  --notify-gray-3: #828282;
-  --notify-white: #fff;
+  --notify-error: rgb(235, 87, 87);
+  --notify-error-progress: rgb(192, 69, 69);
+  --notify-success: rgb(111, 207, 151);
+  --notify-success-progress: rgb(84, 170, 120);
+  --notify-warning: rgb(242, 201, 76);
+  --notify-warning-progress: rgb(196, 166, 79);
+  --notify-info: rgb(81, 205, 243);
+  --notify-info-progress: rgb(84, 169, 196);
+  --notify-gray: rgb(51, 51, 51);
+  --notify-gray-2: rgb(77, 77, 77);
+  --notify-gray-3: rgb(130, 130, 130);
+  --notify-white: rgb(255, 255, 255);
   --notify-white-2: rgba(255, 255, 255, 0.8);
   --notify-padding: 0.75rem;
   --notify-icon-size: 32px;
@@ -72,11 +76,10 @@
   display: flex;
 
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  overflow: hidden;
   padding: var(--notify-padding);
   position: relative;
-  position: relative;
   transition-timing-function: ease;
-  user-select: none;
   width: 100%;
 
   &__icon {
@@ -98,6 +101,7 @@
     position: absolute;
     right: 12px;
     top: 12px;
+    user-select: none;
     width: var(--notify-close-icon-size);
 
     * {
@@ -123,9 +127,11 @@
     #{$this}__close {
       color: var(--notify-gray-3);
     }
+
     #{$this}__title {
       color: var(--notify-gray);
     }
+
     #{$this}__text {
       color: var(--notify-gray-2);
     }
@@ -137,6 +143,7 @@
 
   &--type-3 {
     color: var(--notify-white);
+
     #{$this}__text {
       color: var(--notify-white-2);
     }
@@ -147,6 +154,7 @@
       box-shadow: 0 2px 26px rgba(#d70000, 0.1);
       color: var(--notify-error);
     }
+
     &#{$this}--type-2,
     &#{$this}--type-3 {
       background-color: var(--notify-error);
@@ -158,6 +166,7 @@
       box-shadow: 0 2px 26px rgba(#f2c94c, 0.1);
       color: var(--notify-warning);
     }
+
     &#{$this}--type-2,
     &#{$this}--type-3 {
       background-color: var(--notify-warning);
@@ -169,6 +178,7 @@
       box-shadow: 0 2px 26px rgba(#52d700, 0.1);
       color: var(--notify-success);
     }
+
     &#{$this}--type-2,
     &#{$this}--type-3 {
       background-color: var(--notify-success);
@@ -180,6 +190,7 @@
       box-shadow: 0 2px 26px rgba(#54afca, 0.1);
       color: var(--notify-info);
     }
+
     &#{$this}--type-2,
     &#{$this}--type-3 {
       background-color: var(--notify-info);
@@ -205,18 +216,22 @@
     .notify-is-x-center:not(.notify-is-bottom) & {
       transform: translateY(-20px);
     }
+
     @at-root .notify-is-x-center.notify-is-bottom & {
       transform: translateY(20px);
     }
+
     @at-root .notify-is-right & {
       transform: translateX(calc(var(--distance) + 110%));
     }
+
     @at-root .notify-is-left & {
       transform: translateX(calc((var(--distance) * -1) - 110%));
     }
   }
 
   &--slideIn {
+
     @at-root .notify-is-x-center:not(.notify-is-bottom) &,
     .notify-is-center &,
     .notify-is-y-center &,
@@ -224,6 +239,7 @@
       opacity: 1;
       transform: translateY(0);
     }
+
     @at-root .notify-is-right &,
     .notify-is-left & {
       opacity: 1;
@@ -234,17 +250,68 @@
   @at-root .notify-is-left & {
     left: var(--distance);
   }
+
   @at-root .notify-is-right & {
     right: var(--distance);
   }
+
   @at-root .notify-is-top &,
   .notify-is-center &,
   .notify-is-y-center &,
   .notify-is-x-center.notify-is-top & {
     margin-top: var(--gap);
   }
+
   @at-root .notify-is-bottom &,
   .notify-is-x-center:not(.notify-is-top) & {
     margin-bottom: var(--gap);
+  }
+
+  // autoclose progress animation
+  &.notify-autoclose {
+    --progress-height: 5px;
+    padding-bottom: calc(var(--notify-padding) + var(--progress-height));
+
+    &::before {
+      animation: progress calc(var(--timeout) * 1ms) linear forwards;
+      bottom: 0;
+      content: '';
+      height: var(--progress-height);
+      left: 0;
+      position: absolute;
+      transform: scale3d(1, 1, 1);
+      transform-origin: left;
+      width: 100%;
+
+      @keyframes progress {
+        to {
+          transform: scale3d(0, 1, 1);
+        }
+      }
+    }
+
+    &.notify--error {
+      &::before {
+        background-color: var(--notify-error-progress);
+      }
+    }
+
+    &.notify--warning {
+      &::before {
+        background-color: var(--notify-warning-progress);
+      }
+    }
+
+    &.notify--success {
+      &::before {
+        background-color: var(--notify-success-progress);
+      }
+    }
+
+    &.notify--info {
+      &::before {
+        background-color: var(--notify-info-progress);
+      }
+    }
   }
 }
