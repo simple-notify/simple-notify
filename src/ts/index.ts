@@ -1,6 +1,6 @@
 import '../css/simple-notify.scss'
 import { fadeIn, fadeOut, slideIn, slideOut } from './effects'
-import * as notify from './types'
+import { notifyType, notifyStatus, notifyEffect, notifyPosition, IArgs } from './types'
 
 export default class Notify {
   wrapper: HTMLElement
