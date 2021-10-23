@@ -36,6 +36,7 @@ interface IArgs {
   autotimeout?: number
   gap?: number
   distance?: number
+  customWrapper?: string
 }
 
 export { notifyType, notifyStatus, notifyEffect, notifyPosition, IArgs }
