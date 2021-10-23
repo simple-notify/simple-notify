@@ -23,7 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
     gap: 20,
     distance: 20,
     type: 1,
-    position: 'right top'
+    position: 'right top',
+    customWrapper: '<a href="#0" target="_blank"></a>'
   }
 
   manipulateCode()
@@ -81,6 +82,9 @@ document.addEventListener('DOMContentLoaded', () => {
         case 'position':
           notify_object.position = val
           break
+        case 'custom-wrapper':
+          notify_object.customWrapper = val
+          break
       }
 
       manipulateCode()
@@ -128,7 +132,8 @@ btn.addEventListener('click', () => {
     gap: ${notify_object.gap},
     distance: ${notify_object.distance},
     type: ${notify_object.type},
-    position: '${notify_object.position}'
+    position: '${notify_object.position}',
+    customWrapper: '${notify_object.customWrapper}',
   })
 })`,
       Prism.languages.js,
