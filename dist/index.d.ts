@@ -1,0 +1,38 @@
+import '../css/simple-notify.scss';
+import type { notifyType, notifyStatus, notifyEffect, notifyPosition, IArgs } from './types';
+export default class Notify {
+    wrapper: HTMLElement;
+    customWrapper: string;
+    container: HTMLElement;
+    status: notifyStatus;
+    type: notifyType;
+    effect: notifyEffect;
+    position: notifyPosition;
+    title: string;
+    text: string;
+    showIcon: boolean;
+    customIcon: string;
+    showCloseButton: boolean;
+    customClass: string;
+    speed: number;
+    autoclose: boolean;
+    autotimeout: number;
+    gap: number;
+    distance: number;
+    selectedNotifyInEffect: (self: Notify) => void;
+    selectedNotifyOutEffect: (self: Notify) => void;
+    constructor(args: IArgs);
+    private checkRequirements;
+    private setContainer;
+    private setPosition;
+    private setCloseButton;
+    private setWrapper;
+    private setContent;
+    private setIcon;
+    private setObserver;
+    private notifyIn;
+    private notifyOut;
+    private autoClose;
+    close(): void;
+    private setEffect;
+}
