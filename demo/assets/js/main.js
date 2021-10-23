@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     distance: 20,
     type: 1,
     position: 'right top',
-    customWrapper: '<a href="#0" target="_blank"></a>'
+    customWrapper: ''
   }
 
   manipulateCode()
