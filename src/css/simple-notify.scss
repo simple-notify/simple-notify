@@ -213,7 +213,7 @@
     will-change: opacity, transform;
 
     @at-root .notify-is-center &,
-    .notify-is-y-center &,
+      .notify-is-y-center &,
       .notify-is-x-center:not(.notify-is-bottom) & {
       transform: translateY(-20px);
     }
@@ -233,7 +233,7 @@
 
   &--slideIn {
     @at-root .notify-is-x-center:not(.notify-is-bottom) &,
-    .notify-is-center &,
+      .notify-is-center &,
       .notify-is-y-center &,
       .notify-is-x-center.notify-is-bottom & {
       opacity: 1;
@@ -241,7 +241,7 @@
     }
 
     @at-root .notify-is-right &,
-    .notify-is-left & {
+      .notify-is-left & {
       opacity: 1;
       transform: translateX(0);
     }
@@ -256,14 +256,14 @@
   }
 
   @at-root .notify-is-top &,
-  .notify-is-center &,
+    .notify-is-center &,
     .notify-is-y-center &,
     .notify-is-x-center.notify-is-top & {
     margin-top: var(--gap);
   }
 
   @at-root .notify-is-bottom &,
-  .notify-is-x-center:not(.notify-is-top) & {
+    .notify-is-x-center:not(.notify-is-top) & {
     margin-bottom: var(--gap);
   }
 
