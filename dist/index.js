@@ -27,7 +27,6 @@ var slideOut = function (self) {
 
 var stringToHTML = function (strHTML) {
     var parser = new DOMParser(), content = 'text/html', DOM = parser.parseFromString(strHTML, content);
-    // return element
     return DOM.body.childNodes[0];
 };
 
