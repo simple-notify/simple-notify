@@ -10,4 +10,5 @@ export default defineConfig({
   target: 'es5',
   format: ['esm', 'cjs', 'iife'],
   loader: {'.svg': 'text'},
+  dts: true,
 })
