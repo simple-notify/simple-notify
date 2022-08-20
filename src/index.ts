@@ -185,7 +185,12 @@ export default class Notify {
       this.wrapper.style.setProperty('--sn-notify-autoclose-timeout', `${this.autotimeout + this.speed}ms`)
     }
 
-    if (this.customClass) this.wrapper.classList.add(this.customClass)
+    if (this.customClass) {
+      const classes = this.customClass.split(' ')
+      classes.forEach(className => {
+        this.wrapper.classList.add(className)
+      })
+    }
   }
 
   private setContent(): void {
