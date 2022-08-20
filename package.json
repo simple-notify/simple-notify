@@ -22,9 +22,13 @@
   "scripts": {
     "build": "tsup",
     "watch": "tsup --watch",
+    "prepublishOnly": "yarn && yarn build",
     "deploy": "gh-pages -d website",
     "lint": "eslint . --ext .ts",
     "format": "prettier --write ./src"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "husky": {
     "hooks": {
