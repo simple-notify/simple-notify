@@ -30,7 +30,7 @@
   --sn-notify-border-color: transparent;
   --sn-notify-border-style: solid;
   --sn-notify-progress-color: var(--sn-neutral-900);
-  --sn-notify-close-icon-color: currentColor;
+  --sn-notify-close-icon-color: var(--sn-neutral-900);
   --sn-notify-title-color: var(--sn-neutral-900);
   --sn-notify-text-color: var(--sn-neutral-800);
   --sn-notify-shadow-color: transparent;
@@ -87,6 +87,8 @@
 .sn-notify {
   pointer-events: auto;
   transition-timing-function: var(--sn-notify-transition-timing-function);
+  transition-duration: var(--sn-notify-transition-duration);
+  transition-properties: transform, opacity;
   border-radius: var(--sn-notify-radius);
   background-color: var(--sn-notify-background-color, transparent);
   border: var(--sn-notify-border-size) var(--sn-notify-border-style) var(--sn-notify-border-color);
