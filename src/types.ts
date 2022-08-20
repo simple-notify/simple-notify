@@ -1,6 +1,6 @@
 import { NOTIFY_TYPE_ENUMS, NOTIFY_ANIMATION_ENUMS, NOTIFY_STATUS_ENUMS } from './consts'
 
-type notifyPosition =
+type NotifyPosition =
   | 'left top'
   | 'top left'
   | 'right top'
@@ -19,15 +19,15 @@ type notifyPosition =
   | 'x-center top'
   | 'x-center bottom'
 
-type notifyType = typeof NOTIFY_TYPE_ENUMS[keyof typeof NOTIFY_TYPE_ENUMS]
-type notifyEffect = typeof NOTIFY_ANIMATION_ENUMS[keyof typeof NOTIFY_ANIMATION_ENUMS]
-type notifyStatus = typeof NOTIFY_STATUS_ENUMS[keyof typeof NOTIFY_STATUS_ENUMS]
+type NotifyType = typeof NOTIFY_TYPE_ENUMS[keyof typeof NOTIFY_TYPE_ENUMS]
+type NotifyEffect = typeof NOTIFY_ANIMATION_ENUMS[keyof typeof NOTIFY_ANIMATION_ENUMS]
+type NotifyStatus = typeof NOTIFY_STATUS_ENUMS[keyof typeof NOTIFY_STATUS_ENUMS]
 
 interface IArgs {
-  status?: notifyStatus
-  type?: notifyType
-  effect?: notifyEffect
-  position?: notifyPosition
+  status?: NotifyStatus
+  type?: NotifyType
+  effect?: NotifyEffect
+  position?: NotifyPosition
   title?: string
   text?: string
   showIcon?: boolean
@@ -42,4 +42,4 @@ interface IArgs {
   customWrapper?: string
 }
 
-export { notifyType, notifyEffect, notifyStatus, notifyPosition, IArgs }
+export { NotifyType, NotifyEffect, NotifyStatus, NotifyPosition, IArgs }

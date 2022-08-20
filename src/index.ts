@@ -1,6 +1,6 @@
 import './style.css'
 import { fadeIn, fadeOut, slideIn, slideOut } from './effects'
-import type { notifyEffect, notifyStatus, notifyType, notifyPosition, IArgs } from './types'
+import type { NotifyEffect, NotifyStatus, NotifyType, NotifyPosition, IArgs } from './types'
 import { stringToHTML } from './utils'
 import { CLASSNAMES, NOTIFY_TYPE_ENUMS, NOTIFY_ANIMATION_ENUMS, NOTIFY_STATUS_ENUMS, ICONS } from './consts';
 
@@ -8,10 +8,10 @@ export default class Notify {
   wrapper: HTMLElement
   customWrapper: string
   container: HTMLElement
-  status: notifyStatus
-  type: notifyType
-  effect: notifyEffect
-  position: notifyPosition
+  status: NotifyStatus
+  type: NotifyType
+  effect: NotifyEffect
+  position: NotifyPosition
   title: string
   text: string
   showIcon: boolean
@@ -219,7 +219,7 @@ export default class Notify {
   }
 
   private setIcon(): void {
-    const computedIcon = (status: notifyStatus) => {
+    const computedIcon = (status: NotifyStatus) => {
       switch (status) {
         case NOTIFY_STATUS_ENUMS.SUCCESS:
           return ICONS.SUCCESS
