@@ -1,4 +1,4 @@
-import { NOTIFY_TYPE_ENUMS, NOTIFY_ANIMATION_ENUMS, NOTIFY_STATUS_ENUMS } from './consts'
+import { NOTIFY_ANIMATION_ENUMS, NOTIFY_STATUS_ENUMS, NOTIFY_TYPE_ENUMS } from './consts'
 
 type NotifyPosition =
   | 'left top'

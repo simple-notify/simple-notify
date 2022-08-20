@@ -1,8 +1,8 @@
 import SvgClose from './icons/close.svg'
-import SvgSuccess from './icons/success.svg'
-import SvgWarning from './icons/warning.svg'
 import SvgError from './icons/error.svg'
 import SvgInfo from './icons/info.svg'
+import SvgSuccess from './icons/success.svg'
+import SvgWarning from './icons/warning.svg'
 import { getSvgNode } from './utils'
 
 export const CLASSNAMES = {
@@ -30,30 +30,30 @@ export const CLASSNAMES = {
   NOTIFY_FADE_IN: 'sn-notify-fade-in',
   NOTIFY_SLIDE: 'sn-notify-slide',
   NOTIFY_SLIDE_IN: 'sn-notify-slide-in',
-  NOTIFY_AUTOCLOSE: 'sn-notify-autoclose',
-} as const;
+  NOTIFY_AUTOCLOSE: 'sn-notify-autoclose'
+} as const
 
 export const NOTIFY_STATUS_ENUMS = {
   ERROR: 'error',
   WARNING: 'warning',
   SUCCESS: 'success',
-  INFO: 'info',
-} as const;
+  INFO: 'info'
+} as const
 
 export const NOTIFY_TYPE_ENUMS = {
   OUTLINE: 'outline',
-  FILLED: 'filled',
-} as const;
+  FILLED: 'filled'
+} as const
 
 export const NOTIFY_ANIMATION_ENUMS = {
   FADE: 'fade',
-  SLIDE: 'slide',
-} as const;
+  SLIDE: 'slide'
+} as const
 
 export const ICONS = {
   CLOSE: getSvgNode(SvgClose),
   SUCCESS: getSvgNode(SvgSuccess),
   ERROR: getSvgNode(SvgError),
   WARNING: getSvgNode(SvgWarning),
-  INFO: getSvgNode(SvgInfo),
-};
+  INFO: getSvgNode(SvgInfo)
+}

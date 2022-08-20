@@ -1,5 +1,5 @@
-import type Notify from './index'
 import { CLASSNAMES } from './consts'
+import type Notify from './index'
 
 export const fadeIn = (self: Notify): void => {
   self.wrapper.classList.add(CLASSNAMES.NOTIFY_FADE)

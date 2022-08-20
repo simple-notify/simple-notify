@@ -1,12 +1,28 @@
 {
   "root": true,
+  "env": {
+    "browser": true,
+    "es2021": true,
+  },
   "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
   "plugins": [
-    "@typescript-eslint"
+    "@typescript-eslint",
+    "prettier"
   ],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended"
-  ]
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": "error",
+    "no-extra-semi": "off",
+    "@typescript-eslint/no-extra-semi": "error",
+    "semi": ["error", "never"]
+  }
 }

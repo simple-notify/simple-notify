@@ -1,8 +1,8 @@
-import './style.css'
+import { CLASSNAMES, ICONS, NOTIFY_ANIMATION_ENUMS, NOTIFY_STATUS_ENUMS, NOTIFY_TYPE_ENUMS } from './consts'
 import { fadeIn, fadeOut, slideIn, slideOut } from './effects'
-import type { NotifyEffect, NotifyStatus, NotifyType, NotifyPosition, IArgs } from './types'
+import './style.css'
+import type { IArgs, NotifyEffect, NotifyPosition, NotifyStatus, NotifyType } from './types'
 import { stringToHTML } from './utils'
-import { CLASSNAMES, NOTIFY_TYPE_ENUMS, NOTIFY_ANIMATION_ENUMS, NOTIFY_STATUS_ENUMS, ICONS } from './consts';
 
 export default class Notify {
   wrapper: HTMLElement
@@ -187,7 +187,7 @@ export default class Notify {
 
     if (this.customClass) {
       const classes = this.customClass.split(' ')
-      classes.forEach(className => {
+      classes.forEach((className) => {
         this.wrapper.classList.add(className)
       })
     }
@@ -225,7 +225,7 @@ export default class Notify {
           return ICONS.SUCCESS
         case NOTIFY_STATUS_ENUMS.ERROR:
           return ICONS.ERROR
-          case NOTIFY_STATUS_ENUMS.WARNING:
+        case NOTIFY_STATUS_ENUMS.WARNING:
           return ICONS.WARNING
         case NOTIFY_STATUS_ENUMS.INFO:
           return ICONS.INFO
@@ -292,4 +292,4 @@ export default class Notify {
   }
 }
 
-(globalThis as any).Notify = Notify
+;(globalThis as any).Notify = Notify
