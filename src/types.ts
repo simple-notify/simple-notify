@@ -24,7 +24,7 @@ type notifyEffect = typeof NOTIFY_ANIMATION_ENUMS[keyof typeof NOTIFY_ANIMATION_
 type notifyStatus = typeof NOTIFY_STATUS_ENUMS[keyof typeof NOTIFY_STATUS_ENUMS]
 
 interface IArgs {
-  status: notifyStatus
+  status?: notifyStatus
   type?: notifyType
   effect?: notifyEffect
   position?: notifyPosition
