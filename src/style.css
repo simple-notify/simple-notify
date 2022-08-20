@@ -53,33 +53,33 @@
   gap: var(--sn-notifications-gap);
   padding: var(--sn-notifications-padding);
 
-  &.is-x-center {
+  &.sn-is-x-center {
     justify-content: center;
   }
 
-  &.is-y-center {
+  &.sn-is-y-center {
     align-content: center;
     justify-content: flex-end;
   }
 
-  &.is-center {
+  &.sn-is-center {
     justify-content: center;
     align-content: center;
   }
 
-  &.is-left {
+  &.sn-is-left {
     justify-content: flex-start;
   }
 
-  &.is-right {
+  &.sn-is-right {
     justify-content: flex-end;
   }
 
-  &.is-top {
+  &.sn-is-top {
     align-content: flex-start;
   }
 
-  &.is-bottom {
+  &.sn-is-bottom {
     align-content: flex-end;
   }
 }
@@ -212,23 +212,23 @@
   will-change: opacity, transform;
   transform: translate3d(var(--sn-notify-x), var(--sn-notify-y), 0);
 
-  @nest .is-left & {
+  @nest .sn-is-left & {
     --sn-notify-x: -100%;
     --sn-notify-y: 0;
   }
-  @nest .is-right &, .is-y-center:not(.is-left) & {
+  @nest .sn-is-right &, .sn-is-y-center:not(.sn-is-left) & {
     --sn-notify-x: 100%;
     --sn-notify-y: 0;
   }
-  @nest .is-top.is-x-center &, .is-x-center & {
+  @nest .sn-is-top.sn-is-x-center &, .sn-is-x-center & {
     --sn-notify-y: -100%;
     --sn-notify-x: 0;
   }
-  @nest .is-bottom.is-x-center & {
+  @nest .sn-is-bottom.sn-is-x-center & {
     --sn-notify-y: 100%;
     --sn-notify-x: 0;
   }
-  @nest .is-bottom.is-x-center & {
+  @nest .sn-is-bottom.sn-is-x-center & {
     --sn-notify-y: 100%;
     --sn-notify-x: 0;
   }
@@ -239,7 +239,7 @@
   transform: translate3d(0, 0, 0);
 }
 
-.sn-notify.sn-notify-autoclose {
+.sn-notify-autoclose {
   padding-bottom: calc(var(--sn-notify-padding) + var(--sn-notify-progress-height));
   &.sn-notify-success {
     --sn-notify-progress-color: var(--sn-success-progress-color);
@@ -255,7 +255,7 @@
   }
 }
 
-.sn-notify.sn-notify-autoclose::before {
+.sn-notify-autoclose::before {
   content: '';
   display: block;
   position: absolute;
