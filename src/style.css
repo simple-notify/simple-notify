@@ -14,15 +14,15 @@
   --sn-info-progress-color: rgb(84, 169, 196);
 
   /* container */
-  --sn-notifications-gap: 20px;
-  --sn-notifications-padding: 20px;
+  --sn-notifications-gap: 20px; /* controlled by js */
+  --sn-notifications-padding: 20px; /* controlled by js */
 
   /* notify */
   --sn-notify-width: 320px;
   --sn-notify-radius: 6px;
   --sn-notify-transition-timing-function: ease;
-  --sn-notify-transition-duration: 500ms;
-  --sn-notify-autoclose-timeout: 30000ms;
+  --sn-notify-transition-duration: 500ms; /* controlled by js */
+  --sn-notify-autoclose-timeout: 30000ms; /* controlled by js */
   --sn-notify-padding: 0.75em;
   --sn-notify-icon-size: 2em;
   --sn-notify-close-icon-size: 1em;
@@ -52,10 +52,6 @@
   grid-gap: var(--sn-notifications-gap);
   gap: var(--sn-notifications-gap);
   padding: var(--sn-notifications-padding);
-
-  > * {
-    pointer-events: auto;
-  }
 
   &.is-x-center {
     justify-content: center;
@@ -128,11 +124,6 @@
   height: var(--sn-notify-close-icon-size);
   width: var(--sn-notify-close-icon-size);
   color: var(--sn-notify-close-icon-color);
-
-  /* FIXME: this should not be needed */
-  * {
-    pointer-events: none;
-  }
 }
 
 .sn-notify-title {
