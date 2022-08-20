@@ -8,21 +8,21 @@
     "alert",
     "notify"
   ],
-  "version": "0.5.5",
-  "homepage": "https://dgknca.github.io/simple-notify/",
-  "repository": "https://github.com/dgknca/simple-notify.git",
+  "version": "1.0.0",
+  "homepage": "https://simple-notify.github.io/simple-notify/",
+  "repository": "https://github.com/simple-notify/simple-notify",
   "author": "Doğukan Çavuş",
   "license": "MIT",
-  "main": "dist/index.js",
-  "module": "dist/simple-notify.es.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "types": "dist/index.d.ts",
   "scripts": {
-    "build": "rollup -c",
-    "watch": "rollup -cw",
-    "deploy": "gh-pages -d demo",
+    "build": "tsup",
+    "watch": "tsup --watch",
+    "deploy": "gh-pages -d website",
     "lint": "eslint . --ext .ts",
     "format": "prettier --write ./src"
   },
@@ -32,19 +32,17 @@
     }
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.33.0",
-    "@typescript-eslint/parser": "^4.33.0",
-    "eslint": "^7.32.0",
-    "gh-pages": "^3.2.3",
-    "husky": "^7.0.2",
-    "node-sass": "^6.0.1",
-    "prettier": "^2.4.1",
-    "rollup": "^2.58.0",
-    "rollup-plugin-scss": "^3.0.0",
-    "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-typescript2": "^0.30.0",
-    "stylelint": "^13.13.1",
-    "stylelint-config-sass-guidelines": "^8.0.0",
-    "typescript": "^4.4.3"
+    "@swc/core": "^1.2.239",
+    "@typescript-eslint/eslint-plugin": "^5.33.1",
+    "@typescript-eslint/parser": "^5.33.1",
+    "eslint": "^8.22.0",
+    "gh-pages": "^4.0.0",
+    "husky": "^8.0.1",
+    "postcss": "^8.4.16",
+    "postcss-nested": "^5.0.6",
+    "postcss-nesting": "^10.1.10",
+    "prettier": "^2.7.1",
+    "tsup": "^6.2.2",
+    "typescript": "^4.7.4"
   }
 }

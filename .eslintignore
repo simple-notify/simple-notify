@@ -1,8 +1,10 @@
 node_modules
 dist
+website
 
 # From gitignore:
 .idea
 .vscode
 debug.log
 yarn-error.log
+
