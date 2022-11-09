@@ -33,6 +33,7 @@ interface IArgs {
   showIcon?: boolean
   customIcon?: string
   showCloseButton?: boolean
+  closeOnClick?: boolean
   customClass?: string
   speed?: number
   autoclose?: boolean
