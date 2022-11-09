@@ -17,6 +17,7 @@ export default class Notify {
   showIcon: boolean
   customIcon: string
   showCloseButton: boolean
+  closeOnClick: boolean
   customClass: string
   speed: number
   autoclose: boolean
@@ -40,6 +41,7 @@ export default class Notify {
       customClass = '',
       speed = 500,
       showCloseButton = true,
+      closeOnClick = false,
       autoclose = false,
       autotimeout = 3000,
       position = 'right top',
@@ -56,6 +58,7 @@ export default class Notify {
     this.speed = speed
     this.effect = effect
     this.showCloseButton = showCloseButton
+    this.closeOnClick = closeOnClick
     this.autoclose = autoclose
     this.autotimeout = autotimeout
     this.notificationsGap = notificationsGap
@@ -81,6 +84,9 @@ export default class Notify {
 
     // set close button
     if (this.showCloseButton) this.setCloseButton()
+
+    // set close on notification click
+    if (this.closeOnClick) this.setCloseOnClick()
 
     // set title, text
     this.setContent()
@@ -139,6 +145,13 @@ export default class Notify {
     this.wrapper.appendChild(closeWrapper)
 
     closeWrapper.addEventListener('click', () => {
+      this.close()
+    })
+  }
+
+  private setCloseOnClick(): void {
+    this.wrapper.style.cursor = 'pointer'
+    this.wrapper.addEventListener('click', () => {
       this.close()
     })
   }
