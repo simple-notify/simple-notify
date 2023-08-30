@@ -31,7 +31,7 @@ import 'simple-notify/dist/simple-notify.min.css'
 
 | Parameter                                   | Type    | Values                                                                                                                                       |    Default    |
 | :------------------------------------------ | :------ | :------------------------------------------------------------------------------------------------------------------------------------------- | :-----------: |
-| `status`                                    | String  | `'error'`, `'warning'`, `'success'`                                                                                                          |    `null`     |
+| `status`                                    | String  | `'error'`, `'warning'`, `'success'`, `'info'`                                                                                                |    `null`     |
 | `title`                                     | String  |                                                                                                                                              |    `null`     |
 | `text`                                      | String  | You can send any type of html.                                                                                                               |    `null`     |
 | `customIcon`                                | String  | You can send any type of html.                                                                                                               |    `null`     |
