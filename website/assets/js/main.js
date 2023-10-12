@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     customIcon: '',
     showIcon: true,
     showCloseButton: true,
+    closeOnClick: false,
     autoclose: false,
     autotimeout: 3000,
     notificationsGap: null,
@@ -108,6 +109,9 @@ document.addEventListener('DOMContentLoaded', () => {
         case 'showCloseButton':
           notify_object.showCloseButton = val
           break
+        case 'closeOnClick':
+          notify_object.closeOnClick = val
+          break
       }
 
       manipulateCode()
@@ -129,6 +133,7 @@ btn.addEventListener('click', () => {
     customIcon: '${notify_object.customIcon}',
     showIcon: ${notify_object.showIcon},
     showCloseButton: ${notify_object.showCloseButton},
+    closeOnClick: ${notify_object.closeOnClick},
     autoclose: ${notify_object.autoclose},
     autotimeout: ${notify_object.autotimeout},
     notificationsGap: ${notify_object.notificationsGap},
