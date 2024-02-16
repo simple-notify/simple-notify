@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="57x57" href="./assets/favicon/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="./assets/favicon/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="./assets/favicon/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="./assets/favicon/apple-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="./assets/favicon/apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="./assets/favicon/apple-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="./assets/favicon/apple-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="./assets/favicon/apple-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="./assets/favicon/android-icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="./assets/favicon/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="./assets/favicon/manifest.json" />
+    <meta name="msapplication-TileColor" content="#1cbc9c" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#1cbc9c" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/plugins/reset.css" />
+    <link rel="stylesheet" href="./assets/css/plugins/prism.css" />
+    <link rel="stylesheet" href="./assets/css/plugins/line.min.css" />
+    <link rel="stylesheet" href="./assets/css/plugins/OverlayScrollbars.min.css" />
+    <link rel="stylesheet" href="./dist/simple-notify.css" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <title>Simple Notify</title>
+  </head>
+  <body>
+    <div class="knobs">
+      <h4 class="knobs-title">Parameters</h4>
+
+      <!-- Status -->
+      <div class="field">
+        <div class="field-label">
+          <label class="label">Status</label>
+        </div>
+        <div class="field-body">
+          <select class="select" data-target="status">
+            <option value="success">Success</option>
+            <option value="error">Error</option>
+            <option value="warning">Warning</option>
+            <option value="info">Info</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- type -->
+      <div class="field">
+        <div class="field-label">
+          <label class="label">Type</label>
+        </div>
+        <div class="field-body">
+          <select class="select" data-target="type">
+            <option value="outline" selected>Outline</option>
+            <option value="filled">Filled</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Title -->
+      <div class="field">
+        <div class="field-label">
+          <label class="label">Title</label>
+        </div>
+        <div class="field-body">
+          <input class="input" type="text" data-target="title" value="Notify Title" />
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div class="field">
+        <div class="field-label">
+          <label class="label">Text</label>
+        </div>
+        <div class="field-body">
+          <input class="input" type="text" data-target="text" value="Notify text lorem ipsum" />
+        </div>
+      </div>
+
+      <!-- customIcon -->
+      <div class="field">
+        <div class="field-label">
+          <label class="label">Custom Icon</label>
+        </div>
+        <div class="field-body">
+          <input class="input" type="text" data-target="customIcon" />
+        </div>
+      </div>
+
+      <!-- customClass -->
+      <div class="field">
+        <div class="field-label">
+          <label class="label">Custom Class</label>
+        </div>
+        <div class="field-body">
+          <input class="input" type="text" data-target="customClass" />
+        </div>
+      </div>
+
+      <!-- speed -->
+      <div class="field">
+        <div class="field-label">
+          <label class="label">Speed</label>
+        </div>
+        <div class="field-body">
+          <input class="input" type="text" data-target="speed" value="300" />
+        </div>
+      </div>
+
+      <!-- effect -->
+      <div class="field">
+        <div class="field-label">
+          <label class="label">Effect</label>
+        </div>
+        <div class="field-body">
+          <select class="select" data-target="effect">
+            <option value="fade" selected>Fade</option>
+            <option value="slide">Slide</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- showIcon -->
+      <div class="field field-horizontal">
+        <div class="field-label">
+          <label class="label">Show Icon?</label>
+        </div>
+        <div class="field-body">
+          <label class="checkbox"><input type="checkbox" checked data-target="showIcon" /></label>
+        </div>
+      </div>
+
+      <!-- showCloseButton -->
+      <div class="field field-horizontal">
+        <div class="field-label">
+          <label class="label">Show Close Button?</label>
+        </div>
+        <div class="field-body">
+          <label class="checkbox"><input type="checkbox" checked data-target="showCloseButton" /></label>
+        </div>
+      </div>
+
+      <!-- autoclose -->
+      <div class="field field-horizontal">
+        <div class="field-label">
+          <label class="label">Auto Close?</label>
+        </div>
+        <div class="field-body">
+          <label class="checkbox"><input type="checkbox" data-target="autoclose" checked /></label>
+        </div>
+      </div>
+
+      <!-- autotimeout -->
+      <div class="field">
+        <div class="field-label">
+          <label class="label">Auto Timeout</label>
+        </div>
+        <div class="field-body">
+          <input class="input" type="text" value="3000" data-target="autotimeout" />
+        </div>
+      </div>
+
+      <!-- notifications gap -->
+      <div class="field">
+        <div class="field-label">
+          <label class="label">Notifications Gap</label>
+        </div>
+        <div class="field-body">
+          <input class="input" type="text" data-target="notificationsGap" value="" />
+        </div>
+      </div>
+
+      <!-- notifications padding -->
+      <div class="field">
+        <div class="field-label">
+          <label class="label">Notifications Padding</label>
+        </div>
+        <div class="field-body">
+          <input class="input" type="text" data-target="notificationsPadding" value="" />
+        </div>
+      </div>
+
+      <!-- position -->
+      <div class="field">
+        <div class="field-label">
+          <label class="label">Position</label>
+        </div>
+        <div class="field-body">
+          <select class="select" data-target="position" value="right top">
+            <option value="right top" selected>right top</option>
+            <option value="right bottom">right bottom</option>
+            <option value="left top">left top</option>
+            <option value="left bottom">left bottom</option>
+            <option value="center">center</option>
+            <option value="x-center">x-center</option>
+            <option value="x-center bottom">x-center bottom</option>
+            <option value="y-center">y-center</option>
+            <option value="y-center left">y-center left</option>
+            <option value="y-center right">y-center right</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- custom wrapper -->
+      <div class="field">
+        <div class="field-label">
+          <label class="label">Custom Wrapper</label>
+        </div>
+        <div class="field-body">
+          <input class="input" type="text" data-target="custom-wrapper" />
+        </div>
+      </div>
+
+      <!-- to avoid padding bug -->
+      <div style="height: 1px; margin-top: 20px"></div>
+    </div>
+
+    <div class="page-container">
+      <div class="header">
+        <a href="https://github.com/simple-notify/simple-notify" target="_blank" rel="noopener nofollow">
+          <img src="./assets/logo.png" alt="" class="logo" />
+        </a>
+        <a
+          class="github-button"
+          href="https://github.com/dgknca/simple-notify"
+          data-icon="octicon-star"
+          data-show-count="true"
+          aria-label="Star dgknca/simple-notify on GitHub"
+          >Star</a
+        >
+      </div>
+
+      <div class="container">
+        <button class="btn purple btn-l no-shadow" id="btn">Push Notification</button>
+
+        <div class="editor">
+          <pre><code class="language-html">&lt;button id="btn"&gt;Push Notification&lt;/button&gt;</code></pre>
+          <pre><code class="language-js" id="js-editor"></code></pre>
+        </div>
+      </div>
+    </div>
+
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script src="./dist/simple-notify.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/plugins/prism.js"></script>
+    <script src="./assets/js/plugins/OverlayScrollbars.min.js"></script>
+  </body>
+</html>

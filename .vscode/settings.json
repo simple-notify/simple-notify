@@ -1,0 +1,20 @@
+{
+  "css.validate": false,
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "eslint.validate": [
+    "javascript",
+    "typescript"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll": false,
+    "source.fixAll.eslint": true,
+    "source.organizeImports": true
+  },
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "search.exclude": {
+    "**/yarn-lock.json": true,
+    "dist/**": true,
+    "website/**/plugins/**": true
+  }
+}

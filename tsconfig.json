@@ -5,6 +5,7 @@
     "module": "es6",
     "noImplicitAny": true,
     "outDir": "./dist",
+    "lib": ["es6", "dom", "es2017"],
     "target": "es5"
   },
   "include": ["src/**/*"],

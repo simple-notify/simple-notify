@@ -1,5 +1,9 @@
 # simple-notify Changelog
 
+## 1.0.0
+
+- removed type-3 thanks to straightforward customization
+
 ## 0.5.0
 
 - [Feature] Added raw html support for `text` parameter https://github.com/dgknca/simple-notify/pull/5
