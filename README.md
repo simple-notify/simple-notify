@@ -41,10 +41,10 @@ import 'simple-notify/dist/simple-notify.min.css'
 | `showIcon`                                  | Boolean |                                                                                                                                              |     true      |
 | `showCloseButton`                           | Boolean |                                                                                                                                              |     true      |
 | `autoclose`                                 | Boolean |                                                                                                                                              |     true     |
-| `autotimeout` (valid only with `autoclose`) | Number  |                                                                                                                                              |     3000      |
+| `autotimeout` (with `autoclose: true`) | Number  |                                                                                                                                              |     3000      |
 | `gap` (margin between notifications)        | Number  |                                                                                                                                              |      20       |
 | `distance` (distance to edges)              | Number  |                                                                                                                                              |      20       |
-| `type` (just for design)                    | Number  | 1, 2, 3                                                                                                                                      |       1       |
+| `type`                   | String  | `'outline'`, `'filled'`                                                                                                                                     |       `'outline'`       |
 | `position`                                  | String  | Combine x and y position. `'left'`, `'right'`, `'top'`, `'bottom'`, `'x-center'`, `'y-center'` or use only `'center'` to center both x and y | `'right top'` |
 
 <sub>All parameters are optional but you must specify 'title' or 'text' at least.</sub>
