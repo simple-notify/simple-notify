@@ -1,5 +1,9 @@
 # simple-notify Changelog
 
+## 1.0.1
+
+- Fixed tsup `keepNames` config to prevent renaming of css classes.
+
 ## 1.0.0
 
 ### BREAKING CHANGES:

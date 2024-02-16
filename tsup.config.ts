@@ -8,7 +8,7 @@ export default defineConfig({
   sourcemap: true,
   clean: true,
   minify: true,
-  keepNames: false,
+  keepNames: true,
   target: 'es5',
   format: ['esm', 'cjs', 'iife'],
   loader: { '.svg': 'text' },
