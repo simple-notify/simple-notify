@@ -89,6 +89,12 @@ body {
   align-items: center;
 }
 
+.header .logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
 .editor {
   --code-gold: #f584ae;
   --code-aqua: #eaca71;

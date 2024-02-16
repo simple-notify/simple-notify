@@ -18,12 +18,13 @@ document.addEventListener('DOMContentLoaded', () => {
     customIcon: '',
     showIcon: true,
     showCloseButton: true,
-    autoclose: false,
+    autoclose: true,
     autotimeout: 3000,
-    gap: 20,
-    distance: 20,
-    type: 1,
-    position: 'right top'
+    notificationsGap: null,
+    notificationsPadding: null,
+    type: 'outline',
+    position: 'right top',
+    customWrapper: ''
   }
 
   manipulateCode()
@@ -41,8 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
           notify_object.effect = val
           break
         case 'type':
-          notify_object.type = parseInt(val)
+          notify_object.type = val
           break
+        case 'position':
+          notify_object.position = val
       }
       manipulateCode()
     })
@@ -72,14 +75,17 @@ document.addEventListener('DOMContentLoaded', () => {
         case 'autotimeout':
           notify_object.autotimeout = parseInt(val)
           break
-        case 'gap':
-          notify_object.gap = parseInt(val)
+        case 'notificationsGap':
+          notify_object.notificationsGap = parseInt(val)
           break
-        case 'distance':
-          notify_object.distance = parseInt(val)
+        case 'notificationsPadding':
+          notify_object.notificationsPadding = parseInt(val)
           break
         case 'position':
           notify_object.position = val
+          break
+        case 'custom-wrapper':
+          notify_object.customWrapper = val
           break
       }
 
@@ -125,10 +131,11 @@ btn.addEventListener('click', () => {
     showCloseButton: ${notify_object.showCloseButton},
     autoclose: ${notify_object.autoclose},
     autotimeout: ${notify_object.autotimeout},
-    gap: ${notify_object.gap},
-    distance: ${notify_object.distance},
+    notificationsGap: ${notify_object.notificationsGap},
+    notificationsPadding: ${notify_object.notificationsPadding},
     type: ${notify_object.type},
-    position: '${notify_object.position}'
+    position: '${notify_object.position}',
+    customWrapper: '${notify_object.customWrapper}',
   })
 })`,
       Prism.languages.js,
