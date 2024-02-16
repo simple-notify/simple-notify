@@ -2,7 +2,15 @@
 
 ## 1.0.0
 
-- removed type-3 thanks to straightforward customization
+### BREAKING CHANGES:
+
+- All CSS variables renamed.
+- All classes renamed.
+- `type` values changed to `'outline'` (default) | `'filled'`.
+- `autoclose` is `true` by default.
+
+### Others:
+- `status` set to `success` by default.
 
 ## 0.5.0
 
