@@ -16,15 +16,6 @@
   "main": "./dist/simple-notify.min.js",
   "module": "./dist/simple-notify.mjs",
   "types": "./dist/simple-notify.d.ts",
-  "exports": {
-    ".": {
-      "index": "./dist/simple-notify.min.js",
-      "types": "./dist/simple-notify.d.ts",
-      "import": "./dist/simple-notify.mjs",
-      "require": "./dist/simple-notify.cjs.js"
-    },
-    "./css": "./dist/simple-notify.css"
-  },
   "files": [
     "dist"
   ],
