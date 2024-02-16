@@ -21,7 +21,7 @@ import 'simple-notify/dist/simple-notify.min.css'
 
 ```html
 <!-- CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-notify@1.0.0/dist/simple-notify.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-notify@1.0.0/dist/simple-notify.css" />
 
 <!-- JS -->
 <script src="https://cdn.jsdelivr.net/npm/simple-notify@1.0.0/dist/simple-notify.min.js"></script>
@@ -57,7 +57,18 @@ import 'simple-notify/dist/simple-notify.min.css'
 
 ## How to use
 
-Just create a new instance, notification will be sent immediately. Full example:
+Just create a new instance, notification will be sent immediately. Simple example:
+
+```js
+function pushNotify() {
+  new Notify({
+    title: 'Notify Title',
+    text: 'Notify text lorem ipsum',
+  })
+}
+```
+
+Full example:
 
 ```js
 function pushNotify() {
@@ -75,7 +86,7 @@ function pushNotify() {
     autotimeout: 3000,
     gap: 20,
     distance: 20,
-    type: 1,
+    type: 'outline',
     position: 'right top'
   })
 }
@@ -92,7 +103,7 @@ function pushNotify() {
     title: 'Notify Title',
     text: 'notify text',
     effect: 'slide',
-    type: 3
+    type: 'filled'
   })
 }
 
@@ -103,7 +114,7 @@ function close() {
 
 ## CSS
 
-The colors and some sizes can be customized easily using CSS variables. You can overwrite them in `.notify` or your custom class, or change it directly in the css file.
+These styles can be customized easily using CSS variables. You can overwrite them in `.sn-notifications-container` or your custom class.
 
 ```css
 .sn-notifications-container {
@@ -141,10 +152,6 @@ The colors and some sizes can be customized easily using CSS variables. You can 
   --sn-notify-progress-height: 5px;
 }
 ```
-
-## Do you need another feature?
-
-If you want any feature, just open an issue and make sure I'll add it ASAP. Also feel free to send PR, contributions are welcomed.
 
 ## Credits
 
