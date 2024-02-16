@@ -44,6 +44,7 @@
   top: 0;
   bottom: 0;
   display: grid;
+  grid-auto-rows: min-content;
   align-content: flex-start;
   grid-gap: var(--sn-notifications-gap);
   gap: var(--sn-notifications-gap);

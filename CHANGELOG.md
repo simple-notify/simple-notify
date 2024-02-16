@@ -1,5 +1,9 @@
 # simple-notify Changelog
 
+## 1.0.2
+
+- Added `grid-auto-rows: min-content` to notifications container.
+
 ## 1.0.1
 
 - Fixed tsup `keepNames` config to prevent renaming of css classes.
