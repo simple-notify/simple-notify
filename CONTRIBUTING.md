@@ -12,6 +12,7 @@ I love to accept pull requests from anyone interested in helping out with the pr
 
 ## Development
 
-- Run `yarn` command to install dependencies
-- `yarn watch` to watch files
-- `yarn build` to build once
+- Run `pnpm i` command to install dependencies
+- `pnpm dev` to watch files
+- `pnpm open` to open the playground
+- `pnpm build` to build once

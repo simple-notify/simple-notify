@@ -30,7 +30,7 @@ export default class Notify {
     const {
       notificationsGap = 20,
       notificationsPadding = 20,
-      status,
+      status = 'success',
       effect = NOTIFY_ANIMATION_ENUMS.FADE,
       type = 'outline',
       title,
@@ -40,7 +40,7 @@ export default class Notify {
       customClass = '',
       speed = 500,
       showCloseButton = true,
-      autoclose = false,
+      autoclose = true,
       autotimeout = 3000,
       position = 'right top',
       customWrapper = ''

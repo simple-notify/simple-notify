@@ -9,6 +9,6 @@ export default defineConfig({
   keepNames: false,
   target: 'es5',
   format: ['esm', 'cjs', 'iife'],
-  loader: {'.svg': 'text'},
-  dts: true,
+  loader: { '.svg': 'text' },
+  dts: true
 })

@@ -20,9 +20,10 @@
     "dist"
   ],
   "scripts": {
+    "dev": "concurrently \"tsup --watch\" \"node scripts/copy-dist.js\"",
+    "open": "browser-sync start --server 'website' --files 'src/**/*.*', 'website/**/*.*'",
     "build": "tsup",
-    "watch": "tsup --watch",
-    "prepublishOnly": "yarn && yarn build",
+    "prepublishOnly": "pnpm i && pnpm build",
     "deploy": "gh-pages -d website",
     "lint": "eslint . --ext .ts",
     "format": "prettier --write ./src"
@@ -32,22 +33,25 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn format && git add ."
+      "pre-commit": "pnpm format && git add ."
     }
   },
   "devDependencies": {
-    "@swc/core": "^1.2.239",
-    "@typescript-eslint/eslint-plugin": "^5.33.1",
-    "@typescript-eslint/parser": "^5.33.1",
-    "eslint": "^8.22.0",
-    "eslint-config-prettier": "^8.5.0",
-    "gh-pages": "^4.0.0",
-    "husky": "^8.0.1",
-    "postcss": "^8.4.16",
-    "postcss-nested": "^5.0.6",
-    "postcss-nesting": "^10.1.10",
-    "prettier": "^2.7.1",
-    "tsup": "^6.2.2",
-    "typescript": "^4.7.4"
+    "@swc/core": "^1.4.1",
+    "@typescript-eslint/eslint-plugin": "^7.0.1",
+    "@typescript-eslint/parser": "^7.0.1",
+    "browser-sync": "^3.0.2",
+    "chokidar": "^3.6.0",
+    "concurrently": "^8.2.2",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "gh-pages": "^6.1.1",
+    "husky": "^9.0.11",
+    "postcss": "^8.4.35",
+    "postcss-nested": "^6.0.1",
+    "postcss-nesting": "^12.0.2",
+    "prettier": "^3.2.5",
+    "tsup": "^8.0.2",
+    "typescript": "^5.3.3"
   }
 }

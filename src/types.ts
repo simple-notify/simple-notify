@@ -19,9 +19,9 @@ type NotifyPosition =
   | 'x-center top'
   | 'x-center bottom'
 
-type NotifyType = typeof NOTIFY_TYPE_ENUMS[keyof typeof NOTIFY_TYPE_ENUMS]
-type NotifyEffect = typeof NOTIFY_ANIMATION_ENUMS[keyof typeof NOTIFY_ANIMATION_ENUMS]
-type NotifyStatus = typeof NOTIFY_STATUS_ENUMS[keyof typeof NOTIFY_STATUS_ENUMS]
+type NotifyType = (typeof NOTIFY_TYPE_ENUMS)[keyof typeof NOTIFY_TYPE_ENUMS]
+type NotifyEffect = (typeof NOTIFY_ANIMATION_ENUMS)[keyof typeof NOTIFY_ANIMATION_ENUMS]
+type NotifyStatus = (typeof NOTIFY_STATUS_ENUMS)[keyof typeof NOTIFY_STATUS_ENUMS]
 
 interface IArgs {
   status?: NotifyStatus
@@ -42,4 +42,4 @@ interface IArgs {
   customWrapper?: string
 }
 
-export { NotifyType, NotifyEffect, NotifyStatus, NotifyPosition, IArgs }
+export { IArgs, NotifyEffect, NotifyPosition, NotifyStatus, NotifyType }

@@ -1,9 +1,5 @@
 .sn-notifications-container {
   /* colors */
-  --sn-neutral-900: rgb(51, 51, 51);
-  --sn-neutral-800: rgb(77, 77, 77);
-  --sn-neutral-700: rgb(130, 130, 130);
-  --sn-white-900: rgb(255, 255, 255);
   --sn-success-color: rgb(111, 207, 151);
   --sn-success-progress-color: rgb(84, 170, 120);
   --sn-error-color: rgb(235, 87, 87);
@@ -29,10 +25,10 @@
   --sn-notify-border-size: 1px;
   --sn-notify-border-color: transparent;
   --sn-notify-border-style: solid;
-  --sn-notify-progress-color: var(--sn-neutral-900);
-  --sn-notify-close-icon-color: var(--sn-neutral-900);
-  --sn-notify-title-color: var(--sn-neutral-900);
-  --sn-notify-text-color: var(--sn-neutral-800);
+  --sn-notify-progress-color: rgb(51, 51, 51);
+  --sn-notify-close-icon-color: rgb(51, 51, 51);
+  --sn-notify-title-color: rgb(51, 51, 51);
+  --sn-notify-text-color: rgb(77, 77, 77);
   --sn-notify-shadow-color: transparent;
   --sn-notify-progress-height: 5px;
 
@@ -96,7 +92,6 @@
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   overflow: hidden;
   position: relative;
   text-decoration: none;
@@ -142,9 +137,10 @@
 }
 
 .sn-notify-outline {
-  --sn-notify-background-color: var(--sn-white-900);
+  --sn-notify-background-color: rgb(255, 255, 255);
   --sn-notify-border-color: var(--sn-success-color);
   box-shadow: 0 2px 26px var(--sn-notify-shadow-color);
+
   &.sn-notify-success {
     --sn-notify-border-color: var(--sn-success-color);
     --sn-notify-icon-color: var(--sn-success-color);
@@ -167,23 +163,24 @@
   }
 
   .sn-notify-title {
-    --sn-notify-title-color: var(--sn-neutral-900);
+    --sn-notify-title-color: rgb(51, 51, 51);
   }
 
   .sn-notify-text {
-    --sn-notify-text-color: var(--sn-neutral-800);
+    --sn-notify-text-color: rgb(77, 77, 77);
   }
 
   .sn-notify-close {
-    --sn-notify-close-icon-color: var(--sn-neutral-700);
+    --sn-notify-close-icon-color: rgb(130, 130, 130);
   }
 }
 
 .sn-notify-filled {
-  --sn-notify-title-color: var(--sn-neutral-900);
-  --sn-notify-text-color: var(--sn-neutral-900);
-  --sn-notify-icon-color: var(--sn-neutral-900);
-  --sn-notify-close-icon-color: var(--sn-neutral-900);
+  --sn-notify-title-color: rgb(51, 51, 51);
+  --sn-notify-text-color: rgb(51, 51, 51);
+  --sn-notify-icon-color: rgb(51, 51, 51);
+  --sn-notify-close-icon-color: rgb(51, 51, 51);
+
   &.sn-notify-success {
     --sn-notify-background-color: var(--sn-success-color);
   }
@@ -241,6 +238,7 @@
 
 .sn-notify-autoclose {
   padding-bottom: calc(var(--sn-notify-padding) + var(--sn-notify-progress-height));
+
   &.sn-notify-success {
     --sn-notify-progress-color: var(--sn-success-progress-color);
   }
