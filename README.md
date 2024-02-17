@@ -14,7 +14,7 @@ npm i simple-notify
 
 ```js
 import Notify from 'simple-notify'
-import 'simple-notify/dist/simple-notify.min.css'
+import 'simple-notify/dist/simple-notify.css'
 ```
 
 ## Include
