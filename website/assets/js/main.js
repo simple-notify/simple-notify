@@ -133,7 +133,7 @@ btn.addEventListener('click', () => {
     autotimeout: ${notify_object.autotimeout},
     notificationsGap: ${notify_object.notificationsGap},
     notificationsPadding: ${notify_object.notificationsPadding},
-    type: ${notify_object.type},
+    type: '${notify_object.type}',
     position: '${notify_object.position}',
     customWrapper: '${notify_object.customWrapper}',
   })
