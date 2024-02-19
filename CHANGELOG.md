@@ -1,5 +1,9 @@
 # simple-notify Changelog
 
+## 1.0.4
+
+- Corrected misspelled `transition-properties` to `transition-property`.
+
 ## 1.0.2
 
 - Added `grid-auto-rows: min-content` to notifications container.

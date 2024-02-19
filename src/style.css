@@ -85,7 +85,7 @@
   pointer-events: auto;
   transition-timing-function: var(--sn-notify-transition-timing-function);
   transition-duration: var(--sn-notify-transition-duration);
-  transition-properties: transform, opacity;
+  transition-property: transform, opacity;
   border-radius: var(--sn-notify-radius);
   background-color: var(--sn-notify-background-color, transparent);
   border: var(--sn-notify-border-size) var(--sn-notify-border-style) var(--sn-notify-border-color);
