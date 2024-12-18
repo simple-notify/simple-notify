@@ -4,6 +4,8 @@ import './style.css'
 import type { IArgs, NotifyEffect, NotifyPosition, NotifyStatus, NotifyType } from './types'
 import { stringToHTML } from './utils'
 
+export type { IArgs, NotifyEffect, NotifyPosition, NotifyStatus, NotifyType }
+
 export default class Notify {
   wrapper: HTMLElement
   customWrapper: string
