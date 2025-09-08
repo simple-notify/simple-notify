@@ -35,8 +35,8 @@
   pointer-events: none;
   width: 100%;
   max-width: 100%;
-  max-height: 100vh;
-  min-height: 100vh;
+  height: 100vh;
+  height: 100dvh;
   position: fixed;
   z-index: 9999;
   left: 0;
